@@ -45,7 +45,6 @@ E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Man
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\ja\DevExpress.Pdf.v18.2.Core.resources.dll
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\ru\DevExpress.Pdf.v18.2.Core.resources.dll
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant Management.csprojAssemblyReference.cache
-E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant_Management.Form1.resources
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant_Management.Properties.Resources.resources
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant Management.csproj.GenerateResource.cache
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant Management.csproj.CoreCompileInputs.cache

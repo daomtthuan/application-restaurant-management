@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Restaurant_Management
 {
-    public partial class Form1 : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
+    public partial class frmMain : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
-        public Form1()
+        public frmMain()
         {
             InitializeComponent();
         }
