@@ -1,6 +1,3 @@
-E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\Restaurant Management.exe.config
-E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\Restaurant Management.exe
-E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\Restaurant Management.pdb
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\DevExpress.BonusSkins.v18.2.dll
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\DevExpress.Data.v18.2.dll
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\DevExpress.Printing.v18.2.Core.dll
@@ -49,8 +46,11 @@ E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Man
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant Management.csproj.GenerateResource.cache
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant Management.csproj.CoreCompileInputs.cache
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant Management.csproj.CopyComplete
-E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant Management.exe
-E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant Management.pdb
-E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant_Management.frmLogin.resources
-E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant Management.exe.licenses
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant_Management.frmMain.resources
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\Quản lý quán ăn.exe.config
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\Quản lý quán ăn.exe
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\Quản lý quán ăn.pdb
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Quản lý quán ăn.exe.licenses
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Quản lý quán ăn.exe
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Quản lý quán ăn.pdb
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant_Management.frmLogin.resources

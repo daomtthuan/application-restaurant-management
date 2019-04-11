@@ -42,11 +42,11 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(61, 12);
+            this.labelControl1.Location = new System.Drawing.Point(82, 12);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(198, 30);
+            this.labelControl1.Size = new System.Drawing.Size(156, 30);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Đăng nhập hệ thống";
+            this.labelControl1.Text = "Quản lý quán ăn";
             // 
             // labelControl2
             // 
@@ -92,6 +92,7 @@
             // 
             // frmLogin
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(320, 245);
@@ -103,7 +104,7 @@
             this.Controls.Add(this.labelControl1);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quản lý quán ăn";
+            this.Text = "Đăng nhập";
             ((System.ComponentModel.ISupportInitialize)(this.tbxUsername.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbxPassword.Properties)).EndInit();
             this.ResumeLayout(false);
