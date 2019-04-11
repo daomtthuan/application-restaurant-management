@@ -1,121 +1,115 @@
-﻿use master
+﻿USE [master]
 --create database RestaurantManagement
-create database RestaurantManagement on primary
+CREATE DATABASE [RestaurantManagement] ON PRIMARY
 (
-	Name = 'RestaurantManagement_Data',
-	Filename = 'E:\Github\restaurant-management\Database\RestaurantManagement_Data.mdf'
-)
-log on
+	NAME = 'RestaurantManagement_Data',
+	FILENAME = 'E:\Github\restaurant-management\Database\RestaurantManagement_Data.mdf'
+) LOG ON
 (
-	Name = 'RestaurantManagement_Log',
-	Filename = 'E:\Github\restaurant-management\Database\RestaurantManagement_Log.ldf'
+	NAME = 'RestaurantManagement_Log',
+	FILENAME = 'E:\Github\restaurant-management\Database\RestaurantManagement_Log.ldf'
 )
-go
+GO
 
-use RestaurantManagement
+USE [RestaurantManagement]
 
 -- Phân quyền tài khoản
-create table Roles
+CREATE TABLE [Roles]
 (
-	ID int primary key,												-- Mã
-	[Name] nvarchar(100) not null									-- Loại tài khoản
+	[ID] INT PRIMARY KEY,											-- Mã
+	[Name] NVARCHAR(100) NOT NULL									-- Loại tài khoản
 )
-go
+GO
 
 -- Trạng thái bàn
-create table TableStatus
+CREATE TABLE [TableStatus]
 (
-	ID int primary key,												-- Mã
-	[Name] nvarchar(100) not null									-- Loại trạng thái
+	[ID] INT PRIMARY KEY,											-- Mã
+	[Name] NVARCHAR(100) NOT NULL									-- Loại trạng thái
 )
-go
+GO
 
 -- Trạng thái bill
-create table BillStatus
+CREATE TABLE [BillStatus]
 (
-	ID int primary key,												-- Mã
-	[Name] nvarchar(100) not null									-- Loại trạng thái
+	[ID] INT PRIMARY KEY,											-- Mã
+	[Name] NVARCHAR(100) NOT NULL									-- Loại trạng thái
 )
-go
+GO
 
 -- Loại thức ăn
-create table FoodCategory
+CREATE TABLE [FoodCategory]
 (
-	ID int primary key,												-- Mã
-	[Name] nvarchar(100) not null									-- Loại thức ăn
+	[ID] INT PRIMARY KEY,											-- Mã
+	[Name] NVARCHAR(100) NOT NULL									-- Loại thức ăn
 )
-go
+GO
 
 -- Tài khoản
-create table Accounts
+CREATE TABLE [Accounts]
 (
-	ID int identity primary key,									-- Mã
-	Username varchar(100) not null unique,							-- Tên đăng nhập
-	[Password] varchar(1000) not null default 'user',				-- Mật khẩu
-	RoleID int not null default 0,									-- Mã phân quyền
-	[Name] nvarchar(100) not null,									-- Tên
-	Gender nvarchar(3) not null,									-- Giới tính		
-	Birthday date not null,											-- Ngày sinh
-	IdentityCard  varchar(20) not null unique,						-- CMND/CCCD
-	Hometown nvarchar(100) not null,								-- Quê quán
-	[Address] nvarchar(100) not null,								-- Địa chỉ
-	Numberphone varchar(20),										-- Số điện thoại
-	Email varchar(100),												-- Email
-
-	check (Gender in ('Nam', N'Nữ')),
-	foreign key (RoleID) references Roles(ID)
+	[ID] INT IDENTITY PRIMARY KEY,									-- Mã
+	[Username] VARCHAR(100) NOT NULL UNIQUE,						-- Tên đăng nhập
+	[Password] VARCHAR(1000) NOT NULL DEFAULT 'user',				-- Mật khẩu
+	[RoleID] INT NOT NULL DEFAULT 0,								-- Mã phân quyền
+	[Name] NVARCHAR(100) NOT NULL,									-- Tên
+	[Gender] NVARCHAR(3) NOT NULL,									-- Giới tính		
+	[Birthday] DATE NOT NULL,										-- Ngày sinh
+	[IdentityCard] VARCHAR(20) NOT NULL UNIQUE,						-- CMND/CCCD
+	[Hometown] NVARCHAR(100) NOT NULL,								-- Quê quán
+	[Address] NVARCHAR(100) NOT NULL,								-- Địa chỉ
+	[Numberphone] VARCHAR(20),										-- Số điện thoại
+	[Email] VARCHAR(100),											-- Email
+	CHECK ([Gender] IN ('Nam', N'Nữ')),
+	FOREIGN KEY ([RoleID]) REFERENCES [Roles] ([ID])
 )
-go
+GO
 
 -- Bàn ăn
-create table FoodTables
+CREATE TABLE [FoodTables]
 (
-	ID int identity primary key,									-- Mã
-	[Name] nvarchar(100) not null default N'Chưa đặt tên',			-- Tên bàn
-	StatusID int not null  default 0,								-- Trạng thái bàn
-	TableType int not null default 1,								-- Loại bàn	
-	
-	check (TableType > 0),
-	foreign key (StatusID) references TableStatus(ID)
+	[ID] INT IDENTITY PRIMARY KEY,									-- Mã
+	[Name] NVARCHAR(100) NOT NULL DEFAULT N'Chưa đặt tên',			-- Tên bàn
+	[StatusID] INT NOT NULL DEFAULT 0,								-- Trạng thái bàn
+	[TableType] INT NOT NULL DEFAULT 1,								-- Loại bàn	
+	CHECK ([TableType] > 0),
+	FOREIGN KEY ([StatusID]) REFERENCES [TableStatus] ([ID])
 )
-go
+GO
 
 -- Thức ăn
-create table Foods
+CREATE TABLE [Foods]
 (
-	ID int identity primary key,									-- Mã
-	[Name] nvarchar(100) not null default N'Chưa đặt tên',			-- Tên thức ăn
-	CategoryID int not null,										-- Mã loại thức ăn
-	Price int not null default 0,
-	
-	foreign key (CategoryID) references FoodCategory(ID)
+	[ID] INT IDENTITY PRIMARY KEY,									-- Mã
+	[Name] NVARCHAR(100) NOT NULL DEFAULT N'Chưa đặt tên',			-- Tên thức ăn
+	[CategoryID] INT NOT NULL,										-- Mã loại thức ăn
+	[Price] INT NOT NULL DEFAULT 0,
+	FOREIGN KEY ([CategoryID]) REFERENCES [FoodCategory] ([ID])
 )
-go
+GO
 
 -- Hoá đơn
-create table Bills
+CREATE TABLE [Bills]
 (
-	ID int identity primary key,									-- Mã
-	CheckIn datetime not null default getDate(),					-- Thời gian vào
-	CheckOut datetime,												-- Thời gian ra
-	TableID int not null,											-- Mã bàn ăn
-	StatusID int not null default 0,								-- Trạng thái hoá đơn
-
-	check(CheckIn <= CheckOut),
-	foreign key (TableID) references FoodTables(ID),
-	foreign key (StatusID) references BillStatus(ID)
+	[ID] INT IDENTITY PRIMARY KEY,									-- Mã
+	[CheckIn] DATETIME NOT NULL DEFAULT GETDATE(),					-- Thời gian vào
+	[CheckOut] DATETIME,											-- Thời gian ra
+	[TableID] INT NOT NULL,											-- Mã bàn ăn
+	[StatusID] INT NOT NULL DEFAULT 0,								-- Trạng thái hoá đơn
+	CHECK ([CheckIn] <= [CheckOut]),
+	FOREIGN KEY ([TableID]) REFERENCES [FoodTables] ([ID]),
+	FOREIGN KEY ([StatusID]) REFERENCES [BillStatus] ([ID])
 )
-go
+GO
 
 -- Chi tiết hoá đơn
-create table BillDetail
+CREATE TABLE [BillDetail]
 (
-	ID int identity primary key,									-- Mã
-	BillID int not null references Bills(ID),						-- Mã hoá đơn
-	FoodID int not null references Foods(ID),						-- Mã thức ăn
-	Quantity int not null default 0,
-
-	foreign key (BillID) references Bills(ID),						
-	foreign key (FoodID) references Foods(ID)	
+	[ID] INT IDENTITY PRIMARY KEY,									-- Mã
+	[BillID] INT NOT NULL REFERENCES [Bills] ([ID]),				-- Mã hoá đơn
+	[FoodID] INT NOT NULL REFERENCES [Foods] ([ID]),				-- Mã thức ăn
+	[Quantity] INT NOT NULL DEFAULT 0,
+	FOREIGN KEY ([BillID]) REFERENCES [Bills] ([ID]),
+	FOREIGN KEY ([FoodID]) REFERENCES [Foods] ([ID])
 )
-go
+GO

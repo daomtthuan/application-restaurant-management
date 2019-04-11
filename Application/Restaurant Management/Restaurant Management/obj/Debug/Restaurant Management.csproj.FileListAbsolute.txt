@@ -53,3 +53,4 @@ E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Man
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant Management.pdb
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant_Management.frmLogin.resources
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant Management.exe.licenses
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant_Management.frmMain.resources
