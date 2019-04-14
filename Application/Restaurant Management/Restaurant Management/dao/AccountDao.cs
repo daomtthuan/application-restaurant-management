@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 
 namespace Restaurant_Management.dao
 {
@@ -11,19 +6,15 @@ namespace Restaurant_Management.dao
     {
         private static AccountDao instance;
 
-        public static AccountDao Instance
-        {
-            get { if (instance == null) instance = new AccountDao(); return instance; }
-            private set { instance = value; }
-        }
+        private AccountDao() { }            
 
-        private AccountDao() { }
-
-        public bool Login(string username, string password)
+        public object getAccountID(string username, string password)
         {
-            string query = "EXEC [Login] @username , @password";
+            string query = "EXEC [getAccountID] @username , @password";
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { username, password});
-            return result.Rows.Count > 0;
+            return (result.Rows.Count == 1)? result.Rows[0][0] : null;
         }
+
+        public static AccountDao Instance { get => instance ?? new AccountDao(); private set => instance = value; }
     }
 }

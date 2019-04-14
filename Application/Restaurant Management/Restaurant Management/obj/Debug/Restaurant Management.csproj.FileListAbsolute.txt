@@ -46,11 +46,49 @@ E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Man
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant Management.csproj.GenerateResource.cache
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant Management.csproj.CoreCompileInputs.cache
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant Management.csproj.CopyComplete
-E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant_Management.frmMain.resources
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\Quản lý quán ăn.exe.config
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\Quản lý quán ăn.exe
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\Quản lý quán ăn.pdb
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Quản lý quán ăn.exe.licenses
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Quản lý quán ăn.exe
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Quản lý quán ăn.pdb
-E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant_Management.frmLogin.resources
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant_Management.bul.frm.frmMain.resources
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant_Management.bul.frm.frmLogin.resources
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant_Management.bul.usc.uscTableManager.resources
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\DevExpress.XtraGrid.v18.2.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\DevExpress.XtraLayout.v18.2.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\DevExpress.XtraPrinting.v18.2.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\DevExpress.RichEdit.v18.2.Core.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\DevExpress.XtraTreeList.v18.2.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\DevExpress.Office.v18.2.Core.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\DevExpress.Images.v18.2.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\DevExpress.XtraGrid.v18.2.xml
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\DevExpress.XtraLayout.v18.2.xml
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\DevExpress.XtraPrinting.v18.2.xml
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\DevExpress.RichEdit.v18.2.Core.xml
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\DevExpress.XtraTreeList.v18.2.xml
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\DevExpress.Office.v18.2.Core.xml
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\de\DevExpress.XtraGrid.v18.2.resources.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\es\DevExpress.XtraGrid.v18.2.resources.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\ja\DevExpress.XtraGrid.v18.2.resources.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\ru\DevExpress.XtraGrid.v18.2.resources.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\de\DevExpress.XtraLayout.v18.2.resources.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\es\DevExpress.XtraLayout.v18.2.resources.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\ja\DevExpress.XtraLayout.v18.2.resources.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\ru\DevExpress.XtraLayout.v18.2.resources.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\de\DevExpress.XtraPrinting.v18.2.resources.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\es\DevExpress.XtraPrinting.v18.2.resources.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\ja\DevExpress.XtraPrinting.v18.2.resources.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\ru\DevExpress.XtraPrinting.v18.2.resources.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\de\DevExpress.RichEdit.v18.2.Core.resources.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\es\DevExpress.RichEdit.v18.2.Core.resources.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\ja\DevExpress.RichEdit.v18.2.Core.resources.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\ru\DevExpress.RichEdit.v18.2.Core.resources.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\de\DevExpress.XtraTreeList.v18.2.resources.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\es\DevExpress.XtraTreeList.v18.2.resources.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\ja\DevExpress.XtraTreeList.v18.2.resources.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\ru\DevExpress.XtraTreeList.v18.2.resources.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\de\DevExpress.Office.v18.2.Core.resources.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\es\DevExpress.Office.v18.2.Core.resources.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\ja\DevExpress.Office.v18.2.Core.resources.dll
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\ru\DevExpress.Office.v18.2.Core.resources.dll

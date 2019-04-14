@@ -58,6 +58,9 @@
     <Reference Include="DevExpress.XtraBars.v18.2" />
     <Reference Include="DevExpress.Sparkline.v18.2.Core" />
     <Reference Include="DevExpress.XtraEditors.v18.2" />
+    <Reference Include="DevExpress.XtraGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -70,28 +73,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="classGlobal.cs" />
+    <Compile Include="bul\frm\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bul\frm\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bul\frm\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bul\frm\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bul\usc\uscTableManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="bul\usc\uscTableManager.Designer.cs">
+      <DependentUpon>uscTableManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="dao\AccountDao.cs" />
     <Compile Include="dao\DataProvider.cs" />
-    <Compile Include="frm\frmLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm\frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm\frmMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm\frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </Compile>
+    <Compile Include="dao\FoodTableDao.cs" />
+    <Compile Include="dto\FoodTable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frm\frmLogin.resx">
+    <EmbeddedResource Include="bul\frm\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm\frmMain.resx">
+    <EmbeddedResource Include="bul\frm\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bul\usc\uscTableManager.resx">
+      <DependentUpon>uscTableManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -102,6 +115,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
@@ -114,10 +128,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="dto\" />
-    <Folder Include="usc\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
@@ -129,6 +140,27 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\properties_32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ide_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\team_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table_16x16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

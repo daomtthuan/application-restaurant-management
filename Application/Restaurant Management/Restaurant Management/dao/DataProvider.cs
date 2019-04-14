@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Restaurant_Management.dao
 {
@@ -12,12 +8,6 @@ namespace Restaurant_Management.dao
     {
         private static DataProvider instance;
         private string ConnectString = @"Data Source=.;Initial Catalog=RestaurantManagement;User ID=sa;Password=sa";
-
-        public static DataProvider Instance
-        {
-            get { if (instance == null) instance = new DataProvider(); return instance; }
-            private set { instance = value; }
-        }
 
         private DataProvider() { }
 
@@ -99,5 +89,7 @@ namespace Restaurant_Management.dao
             }
             return data;
         }
+
+        public static DataProvider Instance { get => instance ?? new DataProvider(); private set => instance = value; }
     }
 }

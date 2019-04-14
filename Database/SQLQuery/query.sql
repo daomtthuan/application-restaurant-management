@@ -1,2 +1,2 @@
 USE [RestaurantManagement]
-EXEC [Login] @username = N'admin', @password = N'admin'
+EXEC [getAccountID] @username = N'admin', @password = N'admin'
