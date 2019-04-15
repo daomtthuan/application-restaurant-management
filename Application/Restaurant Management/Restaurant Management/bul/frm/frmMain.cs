@@ -23,7 +23,7 @@ namespace Restaurant_Management.bul.frm
             {
                 new uscTableManager() { Dock = DockStyle.Fill }
             };
-           
+
             foreach (UserControl item in usc)
             {
                 fluContainer.Controls.Add(item);
@@ -39,6 +39,17 @@ namespace Restaurant_Management.bul.frm
         private void FrmMain_Load(object sender, EventArgs e)
         {
             AccordionControlElement3_Click(sender, e);
+        }
+
+        private void AceExit_Click(object sender, EventArgs e)
+        {
+            frmLogin.isExit = true;
+            Close();
+        }
+
+        private void AceLogout_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

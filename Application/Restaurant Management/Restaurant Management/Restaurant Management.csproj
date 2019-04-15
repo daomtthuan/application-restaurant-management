@@ -92,8 +92,12 @@
       <DependentUpon>uscTableManager.cs</DependentUpon>
     </Compile>
     <Compile Include="dao\AccountDao.cs" />
+    <Compile Include="dao\BillDao.cs" />
+    <Compile Include="dao\BillDetailDao.cs" />
     <Compile Include="dao\DataProvider.cs" />
     <Compile Include="dao\FoodTableDao.cs" />
+    <Compile Include="dto\Bill.cs" />
+    <Compile Include="dto\BillDetail.cs" />
     <Compile Include="dto\FoodTable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

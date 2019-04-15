@@ -1,6 +1,8 @@
-﻿using System.Data;
+﻿using DevExpress.XtraEditors;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace Restaurant_Management.dao
 {
@@ -8,12 +10,14 @@ namespace Restaurant_Management.dao
     {
         private static DataProvider instance;
         private string ConnectString = @"Data Source=.;Initial Catalog=RestaurantManagement;User ID=sa;Password=sa";
+        //private string ConnectString = @"Data Source=sql.freeasphost.net\MSSQL2016;User ID=dmtthuan;Password=NegaTNP123";
 
         private DataProvider() { }
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
+
             using (SqlConnection connection = new SqlConnection(ConnectString))
             {
                 connection.Open();

@@ -30,20 +30,27 @@ namespace Restaurant_Management.bul.usc
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lsvBillDetail = new System.Windows.Forms.ListView();
             this.flpFoodTable = new System.Windows.Forms.FlowLayoutPanel();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
-            // listView1
+            // lsvBillDetail
             // 
-            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lsvBillDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView1.Location = new System.Drawing.Point(630, 10);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(867, 938);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.lsvBillDetail.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.lsvBillDetail.GridLines = true;
+            this.lsvBillDetail.Location = new System.Drawing.Point(630, 10);
+            this.lsvBillDetail.Name = "lsvBillDetail";
+            this.lsvBillDetail.Size = new System.Drawing.Size(867, 938);
+            this.lsvBillDetail.TabIndex = 1;
+            this.lsvBillDetail.UseCompatibleStateImageBehavior = false;
+            this.lsvBillDetail.View = System.Windows.Forms.View.Details;
             // 
             // flpFoodTable
             // 
@@ -55,12 +62,22 @@ namespace Restaurant_Management.bul.usc
             this.flpFoodTable.Size = new System.Drawing.Size(615, 938);
             this.flpFoodTable.TabIndex = 2;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "FoodID";
+            this.columnHeader1.Width = 135;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Quantity";
+            this.columnHeader2.Width = 361;
+            // 
             // uscTableManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.flpFoodTable);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.lsvBillDetail);
             this.Name = "uscTableManager";
             this.Padding = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Size = new System.Drawing.Size(1506, 958);
@@ -69,7 +86,9 @@ namespace Restaurant_Management.bul.usc
         }
 
         #endregion
-        private ListView listView1;
+        private ListView lsvBillDetail;
         private FlowLayoutPanel flpFoodTable;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
     }
 }

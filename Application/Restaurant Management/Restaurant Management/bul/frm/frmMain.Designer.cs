@@ -115,12 +115,14 @@
             this.aceLogout.Name = "aceLogout";
             this.aceLogout.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.aceLogout.Text = "Đăng xuất";
+            this.aceLogout.Click += new System.EventHandler(this.AceLogout_Click);
             // 
             // aceExit
             // 
             this.aceExit.Name = "aceExit";
             this.aceExit.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.aceExit.Text = "Thoát";
+            this.aceExit.Click += new System.EventHandler(this.AceExit_Click);
             // 
             // fluentDesignFormControl1
             // 

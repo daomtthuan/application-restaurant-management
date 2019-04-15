@@ -6,13 +6,13 @@ namespace Restaurant_Management.dao
     {
         private static AccountDao instance;
 
-        private AccountDao() { }            
+        private AccountDao() { }
 
         public object getAccountID(string username, string password)
         {
             string query = "EXEC [getAccountID] @username , @password";
-            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { username, password});
-            return (result.Rows.Count == 1)? result.Rows[0][0] : null;
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { username, password });
+            return (data.Rows.Count == 1) ? data.Rows[0][0] : null;
         }
 
         public static AccountDao Instance { get => instance ?? new AccountDao(); private set => instance = value; }

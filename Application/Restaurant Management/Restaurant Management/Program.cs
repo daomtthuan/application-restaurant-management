@@ -14,9 +14,8 @@ namespace Restaurant_Management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
             BonusSkins.Register();
-            Application.Run(new bul.frm.frmLogin());
+            Application.Run(new bul.frm.frmLogin());            
         }
     }
 }
