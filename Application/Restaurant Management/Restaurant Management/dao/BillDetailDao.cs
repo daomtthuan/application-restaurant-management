@@ -1,10 +1,4 @@
-﻿using Restaurant_Management.dto;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 
 namespace Restaurant_Management.dao
 {
@@ -14,17 +8,14 @@ namespace Restaurant_Management.dao
 
         private BillDetailDao() { }
 
-        public List<BillDetail> GetBillDetail(int billID)
+        public DataTable GetBillDetail(int billID)
         {
-            List<BillDetail> billDetail = new List<BillDetail>();
-            string query = "EXEC [getBillDetail] @billID";
-            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { billID });
+            return DataProvider.Instance.ExecuteQuery("[procGetBillDetailByBillID] @billID", new object[] { billID });
+        }
 
-            foreach (DataRow item in data.Rows)
-            {
-                billDetail.Add(new BillDetail(item));
-            }
-            return billDetail;
+        public void EditBill(int tableID, int foodID, int quantity)
+        {
+            DataProvider.Instance.ExecuteNonQuery("[procEditBill] @tableID , @foodID , @quantity", new object[] { tableID, foodID, quantity });
         }
 
         public static BillDetailDao Instance { get => instance ?? new BillDetailDao(); private set => instance = value; }

@@ -12,11 +12,9 @@ namespace Restaurant_Management.bul.frm
             InitializeComponent();
         }
 
-        public static bool isExit;
-
-        private object getAccountID(string username, string password)
+        private int getAccountID(string username, string password)
         {
-            return AccountDao.Instance.getAccountID(username, password);
+            return AccountDao.Instance.GetAccountID(username, password);
         }
 
         private void BtnLogin_Click(object sender, EventArgs e)
@@ -28,19 +26,15 @@ namespace Restaurant_Management.bul.frm
                 if (tbxUsername.Text == "") tbxUsername.Focus(); else tbxPassword.Focus();
             }
             else
-            {
-                if (getAccountID(tbxUsername.Text, tbxPassword.Text) != null)
+            {           
+                if (getAccountID(tbxUsername.Text, tbxPassword.Text) != -1)
                 {
                     Hide();
                     tbxPassword.Text = "";
                     tbxPassword.Focus();
-                    using (frmMain frmMain = new frmMain())
-                    {
-                        isExit = false;
-                        frmMain.ShowDialog();
-                    }
-                    if (!isExit) Show();
-                    else Application.Exit();
+                    
+                    new frmMain().ShowDialog();
+                    Show();
                 }
                 else
                 {
@@ -48,9 +42,9 @@ namespace Restaurant_Management.bul.frm
                     XtraMessageBox.Show("Đăng nhập không thành công!\nTên đăng nhập hoặc mật khẩu không đúng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tbxUsername.Focus();
                     tbxUsername.SelectAll();
-                }
-                Cursor = Cursors.Default;
+                }               
             }
+            Cursor = Cursors.Default;
         }
     }
 }

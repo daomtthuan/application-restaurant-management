@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using Restaurant_Management.bul.usc;
@@ -31,25 +25,24 @@ namespace Restaurant_Management.bul.frm
             }
         }
 
-        private void AccordionControlElement3_Click(object sender, EventArgs e)
+        private void aceFoodTableManager_Click(object sender, EventArgs e)
         {
             usc[0].Show();
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            AccordionControlElement3_Click(sender, e);
+            aceFoodTableManager_Click(sender, e);
         }
 
         private void AceExit_Click(object sender, EventArgs e)
         {
-            frmLogin.isExit = true;
-            Close();
+            Environment.Exit(0);
         }
 
         private void AceLogout_Click(object sender, EventArgs e)
         {
-            Close();
+            Dispose();
         }
     }
 }

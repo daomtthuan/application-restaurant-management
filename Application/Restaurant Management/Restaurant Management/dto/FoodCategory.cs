@@ -2,28 +2,23 @@
 
 namespace Restaurant_Management.dto
 {
-    public class FoodTable
+    public class FoodCategory
     {
         private int iD;
         private string name;
-        private string status;
 
-        public FoodTable(int id, string name, string status)
+        public FoodCategory(int id, string name)
         {
             ID = id;
             Name = name;
-            Status = status;
         }
-
-        public FoodTable(DataRow row)
+        public FoodCategory(DataRow row)
         {
             ID = (int)row["ID"];
             Name = row["Name"].ToString();
-            Status = row["Status"].ToString();
         }
 
         public int ID { get => iD; set => iD = value; }
         public string Name { get => name; set => name = value; }
-        public string Status { get => status; set => status = value; }
     }
 }

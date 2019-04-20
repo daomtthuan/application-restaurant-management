@@ -14,19 +14,12 @@ namespace Restaurant_Management.dao
 
         private BillDao() { }
 
-        /// <summary>
-        /// Thành công: BillID
-        /// Thất bại: -1
-        /// </summary>
-        /// <param name="tableID"></param>
-        /// <returns></returns>
-        public int getUncheckedOut_BillID_by_TableID(int tableID)
+        public int GetUncheckedOutBillID(int tableID)
         {
-            string query = "EXEC [getUncheckedOutBill] @tableID";
-            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { tableID });
-            return (data.Rows.Count > 0) ?  new Bill(data.Rows[0]).ID : -1;
+            var data = DataProvider.Instance.ExecuteScalar("[procGetUncheckedOutBillID] @tableID", new object[] { tableID });
+            return (data == null) ? -1 : (int)data;
         }
 
-        public static BillDao Instance { get => instance ?? new BillDao(); private set => instance = value; } 
+        public static BillDao Instance { get => instance ?? new BillDao(); private set => instance = value; }
     }
 }

@@ -1,4 +1,6 @@
 ﻿-- Create database
+USE master
+DROP DATABASE [RestaurantManagement]
 CREATE DATABASE [RestaurantManagement] ON PRIMARY
 (
 	NAME = 'RestaurantManagement_Data',
@@ -13,7 +15,7 @@ GO
 -- Create tables
 USE [RestaurantManagement]
 -- Phân quyền tài khoản
-CREATE TABLE [Roles]
+CREATE TABLE [Role]
 (
 	[ID] INT IDENTITY(0,1) PRIMARY KEY,								-- Mã
 	[Name] NVARCHAR(100) NOT NULL									-- Loại tài khoản
@@ -53,7 +55,7 @@ CREATE TABLE [Gender]
 GO
 
 -- Tài khoản
-CREATE TABLE [Accounts]
+CREATE TABLE [Account]
 (
 	[ID] INT IDENTITY(1,1) PRIMARY KEY,								-- Mã
 	[Username] NVARCHAR(100) NOT NULL UNIQUE,						-- Tên đăng nhập
@@ -68,15 +70,15 @@ CREATE TABLE [Accounts]
 	[Numberphone] NVARCHAR(20),										-- Số điện thoại
 	[Email] NVARCHAR(100),											-- Email
 
-	FOREIGN KEY ([RoleID]) REFERENCES [Roles] ([ID]),
+	FOREIGN KEY ([RoleID]) REFERENCES [Role] ([ID]),
 	FOREIGN KEY ([GenderID]) REFERENCES [Gender] ([ID])
 )
 GO
 
 -- Bàn ăn
-CREATE TABLE [FoodTables]
+CREATE TABLE [Table]
 (
-	[ID] INT IDENTITY(1,1) PRIMARY KEY,								-- Mã
+	[ID] INT IDENTITY(0,1) PRIMARY KEY,								-- Mã
 	[Name] NVARCHAR(100) NOT NULL DEFAULT N'Chưa đặt tên',			-- Tên bàn
 	[StatusID] INT NOT NULL DEFAULT 0,								-- Trạng thái bàn
 
@@ -85,7 +87,7 @@ CREATE TABLE [FoodTables]
 GO
 
 -- Thức ăn
-CREATE TABLE [Foods]
+CREATE TABLE [Food]
 (
 	[ID] INT IDENTITY(0,1) PRIMARY KEY,								-- Mã
 	[Name] NVARCHAR(100) NOT NULL DEFAULT N'Chưa đặt tên',			-- Tên thức ăn
@@ -97,16 +99,18 @@ CREATE TABLE [Foods]
 GO
 
 -- Hoá đơn
-CREATE TABLE [Bills]
+CREATE TABLE [Bill]
 (
 	[ID] INT IDENTITY(0,1) PRIMARY KEY,								-- Mã
 	[CheckIn] DATETIME NOT NULL DEFAULT GETDATE(),					-- Thời gian vào
 	[CheckOut] DATETIME,											-- Thời gian ra
 	[TableID] INT NOT NULL,											-- Mã bàn ăn
 	[StatusID] INT NOT NULL DEFAULT 0,								-- Trạng thái hoá đơn
+	[Sale] INT NOT NULL DEFAULT	0,									-- Giảm giá
 
 	CHECK ([CheckIn] <= [CheckOut]),
-	FOREIGN KEY ([TableID]) REFERENCES [FoodTables] ([ID]),
+	CHECK (0 <= [Sale] AND [Sale] <= 100),
+	FOREIGN KEY ([TableID]) REFERENCES [Table] ([ID]),
 	FOREIGN KEY ([StatusID]) REFERENCES [BillStatus] ([ID])
 )
 GO
@@ -115,197 +119,121 @@ GO
 CREATE TABLE [BillDetail]
 (
 	[ID] INT IDENTITY(0,1) PRIMARY KEY,								-- Mã
-	[BillID] INT NOT NULL REFERENCES [Bills] ([ID]),				-- Mã hoá đơn
-	[FoodID] INT NOT NULL REFERENCES [Foods] ([ID]),				-- Mã thức ăn
+	[BillID] INT NOT NULL REFERENCES [Bill] ([ID]),					-- Mã hoá đơn
+	[FoodID] INT NOT NULL REFERENCES [Food] ([ID]),					-- Mã thức ăn
 	[Quantity] INT NOT NULL DEFAULT 0,								-- Số lượng
 
 	CHECK ([Quantity] > 0),
-	FOREIGN KEY ([BillID]) REFERENCES [Bills] ([ID]),
-	FOREIGN KEY ([FoodID]) REFERENCES [Foods] ([ID])
+	FOREIGN KEY ([BillID]) REFERENCES [Bill] ([ID]),
+	FOREIGN KEY ([FoodID]) REFERENCES [Food] ([ID])
 )
 GO
 
--- Insert data
-INSERT INTO [Roles] VALUES (N'Không hoạt động')
-INSERT INTO [Roles] VALUES (N'Quản lý')
-INSERT INTO [Roles] VALUES (N'Nhân viên Thu ngân')
-INSERT INTO [Roles] VALUES (N'Nhân viên Pha chế')
-INSERT INTO [Roles] VALUES (N'Nhân viên Phục vụ')
-INSERT INTO [Roles] VALUES (N'Nhân viên Tạp vụ')
-INSERT INTO [Roles] VALUES (N'Nhân viên Vận chuyển')
-INSERT INTO [Roles] VALUES (N'Bảo vệ')
-INSERT INTO [TableStatus] VALUES (N'Trống')
-INSERT INTO [TableStatus] VALUES (N'Có người')
-INSERT INTO [TableStatus] VALUES (N'Đã được đặt')
-INSERT INTO [BillStatus] VALUES	(N'Chưa thanh toán')
-INSERT INTO [BillStatus] VALUES	(N'Đã thanh toán')
-INSERT INTO [Gender] VALUES (N'Nam')
-INSERT INTO [Gender] VALUES (N'Nữ')
-INSERT INTO [Accounts] VALUES ('admin', 'admin', 1, N'Đào Minh Trung Thuận', 0, '1999-09-18', '362540898', N'Thành phố Cần Thơ', N'57 Đường B5, Phường Hưng Phú, Quận Cái Răng, Thành phố Cần Thơ', '0939908568', 'dao.mt.thuan@gmail.com')
-INSERT INTO [Accounts] VALUES ('quanly', '1', 1, N'Cao Lập Triệu', 0, '1990-03-19', '101543076', N'Thành phố Hải Dương', N'74 Phố Hoán, Phường Võ Vỹ Sáng, Quận Tuyết Miên, Thành phố Hải Dương', '0253062672', 'lap.trieu@gmail.com')
-INSERT INTO [Accounts] VALUES ('thungan', '1', 2, N'Cự Hà Trúc', 1, '1995-08-23', '635764587', N'Tỉnh Bắc Kạn', N'94 Thôn 08, Phường Ninh, Quận Chế Thêu, Tỉnh Bắc Kạn', '0599397220', 'ha.truc@gmail.com')
-INSERT INTO [Accounts] VALUES ('phucvu1', '1', 4, N'La Cát Tuyến', 1, '1993-11-22', '715920211', N'Tỉnh Quảng Ninh', N'278 Thôn 5, Phường 76, Quận Đôn Nguyệt, Tỉnh Quảng Ninh', '01860831308', 'cat.tuyen@gmail.com')
-INSERT INTO [Accounts] VALUES ('phucvu2', '1', 4, N'Mộc Hải Ngạn', 0, '1998-11-05', '365532348 ', N'Tỉnh Bạc Liêu', N'9336 Phố Nhiệm Toàn Ca, Xã Quyết Bào, Quận Cái, Tỉnh Bạc Liêu', '0919641619', 'hai.ngan@gmail.com')
-DECLARE @i INT = 1
-WHILE @i <= 30
-BEGIN
-	INSERT INTO [FoodTables]([Name]) VALUES (N'Bàn ' + CAST(@i AS NVARCHAR(100)))
-	SET @i = @i + 1
-END
-UPDATE [FoodTables] SET [StatusID] = 1 WHERE [ID] IN (1,2,4,6,10,14,20,25,26,30)
-INSERT INTO [FoodCategory] VALUES (N'Trà sữa')
-INSERT INTO [FoodCategory] VALUES (N'Thạch')
-INSERT INTO [FoodCategory] VALUES (N'Trà')
-INSERT INTO [FoodCategory] VALUES (N'Soda')
-INSERT INTO [FoodCategory] VALUES (N'Sữa')
-INSERT INTO [FoodCategory] VALUES (N'Thức uống khác')
-INSERT INTO [FoodCategory] VALUES (N'Món ăn nhẹ')
-INSERT INTO [FoodCategory] VALUES (N'Mì')
-INSERT INTO [FoodCategory] VALUES (N'Cơm')
-INSERT INTO [FoodCategory] VALUES (N'Canh')
-INSERT INTO [FoodCategory] VALUES (N'Món thêm')
-INSERT INTO [FoodCategory] VALUES (N'Bánh')
-INSERT INTO [FoodCategory] VALUES (N'Chè')
-INSERT INTO [Foods] VALUES (N'Trà sữa trân châu', 0, 23)
-INSERT INTO [Foods] VALUES (N'Trà sữa thập cẩm', 0, 23)
-INSERT INTO [Foods] VALUES (N'Trà sữa truyền thống', 0, 18)
-INSERT INTO [Foods] VALUES (N'Trà sữa thái xanh', 0, 23)
-INSERT INTO [Foods] VALUES (N'Trà sữa thái đỏ', 0, 23)
-INSERT INTO [Foods] VALUES (N'Trà sữa thái sương sáo', 0, 28)
-INSERT INTO [Foods] VALUES (N'Trà sữa thái thập cẩm', 0, 28)
-INSERT INTO [Foods] VALUES (N'Trân châu', 1, 5)
-INSERT INTO [Foods] VALUES (N'Sương sáo', 1, 5)
-INSERT INTO [Foods] VALUES (N'Thạch cà phê', 1, 5)
-INSERT INTO [Foods] VALUES (N'Thạch cacao', 1, 5)
-INSERT INTO [Foods] VALUES (N'Thạch trái cây', 1, 5)
-INSERT INTO [Foods] VALUES (N'Jelly', 1, 2)
-INSERT INTO [Foods] VALUES (N'Đào', 1, 7)
-INSERT INTO [Foods] VALUES (N'Khúc bạch', 1, 1)
-INSERT INTO [Foods] VALUES (N'Trà chanh', 2, 15)
-INSERT INTO [Foods] VALUES (N'Trà chanh trân châu', 2, 20)
-INSERT INTO [Foods] VALUES (N'Trà chanh thái xanh', 2, 18)
-INSERT INTO [Foods] VALUES (N'Trà chanh thái đỏ', 2, 18)
-INSERT INTO [Foods] VALUES (N'Trà đào', 2, 35)
-INSERT INTO [Foods] VALUES (N'Trà đào không đào', 2, 30)
-INSERT INTO [Foods] VALUES (N'Hồng trà', 2, 18)
-INSERT INTO [Foods] VALUES (N'Hồng trà chanh', 2, 18)
-INSERT INTO [Foods] VALUES (N'Mojito đào', 2, 30)
-INSERT INTO [Foods] VALUES (N'Soda dâu', 3, 30)
-INSERT INTO [Foods] VALUES (N'Soda đào', 3, 30)
-INSERT INTO [Foods] VALUES (N'Soda việt quất', 3, 30)
-INSERT INTO [Foods] VALUES (N'Soda chanh', 3, 30)
-INSERT INTO [Foods] VALUES (N'Sữa dâu', 4, 30)
-INSERT INTO [Foods] VALUES (N'Sữa đào', 4, 30)
-INSERT INTO [Foods] VALUES (N'Sữa việt quất', 4, 30)
-INSERT INTO [Foods] VALUES (N'Nước suối', 5, 10)
-INSERT INTO [Foods] VALUES (N'Nước hoa Atiso', 5, 25)
-INSERT INTO [Foods] VALUES (N'Blue sky', 5, 35)
-INSERT INTO [Foods] VALUES (N'7up', 5, 12)
-INSERT INTO [Foods] VALUES (N'Pepsi', 5, 12)
-INSERT INTO [Foods] VALUES (N'Cocacola', 5, 12)
-INSERT INTO [Foods] VALUES (N'Sting', 5, 12)
-INSERT INTO [Foods] VALUES (N'Chân gà sốt cay', 6, 70)
-INSERT INTO [Foods] VALUES (N'Chân gà nước mắm', 6, 70)
-INSERT INTO [Foods] VALUES (N'Tokbokki phô mai', 6, 47)
-INSERT INTO [Foods] VALUES (N'Cá viên chiên', 6, 45)
-INSERT INTO [Foods] VALUES (N'Chả cá lạp xưởng', 6, 50)
-INSERT INTO [Foods] VALUES (N'Salad bò trứng', 6, 45)
-INSERT INTO [Foods] VALUES (N'Sandwish chiên', 6, 45)
-INSERT INTO [Foods] VALUES (N'Cá viên cari', 6, 25)
-INSERT INTO [Foods] VALUES (N'Bánh mè phô mai', 6, 40)
-INSERT INTO [Foods] VALUES (N'Bắp xào tôm khô', 6, 35)	
-INSERT INTO [Foods] VALUES (N'Bắp xào trứng muối', 6, 25)	
-INSERT INTO [Foods] VALUES (N'Bắp xào tôm trứng', 6, 35)	
-INSERT INTO [Foods] VALUES (N'Mi kim chi sụn bò', 7, 55)
-INSERT INTO [Foods] VALUES (N'Mi xào hải sản', 7, 58)
-INSERT INTO [Foods] VALUES (N'Mi ý hải sản', 7, 55)
-INSERT INTO [Foods] VALUES (N'Mi thái hải sản', 7, 55)
-INSERT INTO [Foods] VALUES (N'Mi udon hải sản', 7, 78)
-INSERT INTO [Foods] VALUES (N'Mi xào bò', 7, 55)
-INSERT INTO [Foods] VALUES (N'Mi ý bò trứng', 7, 55)
-INSERT INTO [Foods] VALUES (N'Mi trộn gà xé', 7, 50)
-INSERT INTO [Foods] VALUES (N'Mi xào ốc giác', 7, 59)
-INSERT INTO [Foods] VALUES (N'Mi cua', 7, 59)
-INSERT INTO [Foods] VALUES (N'Cơm gà xé chà bông', 8, 55)
-INSERT INTO [Foods] VALUES (N'Cơm bò phô mai', 8, 55)
-INSERT INTO [Foods] VALUES (N'Cơm chiên trứng', 8, 35)
-INSERT INTO [Foods] VALUES (N'Cơm kim chi', 8, 58)
-INSERT INTO [Foods] VALUES (N'Cơm trộn maika', 8, 55)
-INSERT INTO [Foods] VALUES (N'Cơm trộn maika', 8, 55)
-INSERT INTO [Foods] VALUES (N'Cơm ruốc thái', 8, 58)
-INSERT INTO [Foods] VALUES (N'Cơm gà sốt me', 8, 55)
-INSERT INTO [Foods] VALUES (N'Canh kim chi', 9, 35)
-INSERT INTO [Foods] VALUES (N'Canh kim chi không trứng', 9, 30)
-INSERT INTO [Foods] VALUES (N'Canh miso', 9, 25)
-INSERT INTO [Foods] VALUES (N'Canh trứng', 9, 10)
-INSERT INTO [Foods] VALUES (N'Bún', 10, 5)
-INSERT INTO [Foods] VALUES (N'Nước lèo', 10, 20)
-INSERT INTO [Foods] VALUES (N'Mì', 10, 5)
-INSERT INTO [Foods] VALUES (N'Rau', 10, 20)
-INSERT INTO [Foods] VALUES (N'Trứng', 10, 5)
-INSERT INTO [Foods] VALUES (N'Đồ ăn', 10, 20)
-INSERT INTO [Foods] VALUES (N'Đồ ăn', 10, 40)
-INSERT INTO [Foods] VALUES (N'Kim chi', 10, 5)
-INSERT INTO [Foods] VALUES (N'Cơm', 10, 5)
-INSERT INTO [Foods] VALUES (N'Bông lan trứng muối', 11, 20)
-INSERT INTO [Foods] VALUES (N'Tiramisu', 11, 40)
-INSERT INTO [Foods] VALUES (N'Chè khúc bạch', 12, 30)
-INSERT INTO [Foods] VALUES (N'Jelly', 12, 10)
-INSERT INTO [Bills] VALUES (GETDATE(), null, 1, 0)
-INSERT INTO [Bills] VALUES (GETDATE(), null, 2, 0)
-INSERT INTO [Bills] VALUES (GETDATE(), null, 4, 0)
-INSERT INTO [Bills] VALUES (GETDATE(), null, 6, 0)
-INSERT INTO [Bills] VALUES (GETDATE(), null, 10, 0)
-INSERT INTO [Bills] VALUES (GETDATE(), null, 14, 0)
-INSERT INTO [Bills] VALUES (GETDATE(), null, 20, 0)
-INSERT INTO [Bills] VALUES (GETDATE(), null, 25, 0)
-INSERT INTO [Bills] VALUES (GETDATE(), null, 26, 0)
-INSERT INTO [Bills] VALUES (GETDATE(), null, 30, 0)
-INSERT INTO [BillDetail] VALUES (0, 0, 1)
-INSERT INTO [BillDetail] VALUES (0, 2, 1)
-INSERT INTO [BillDetail] VALUES (1, 8, 1)
-INSERT INTO [BillDetail] VALUES (2, 12, 1)
-INSERT INTO [BillDetail] VALUES (3, 30, 1)
-INSERT INTO [BillDetail] VALUES (3, 32, 1)
-INSERT INTO [BillDetail] VALUES (3, 36, 2)
-INSERT INTO [BillDetail] VALUES (4, 0, 1)
-INSERT INTO [BillDetail] VALUES (5, 0, 3)
-INSERT INTO [BillDetail] VALUES (6, 10, 1)
-INSERT INTO [BillDetail] VALUES (7, 22, 1)
-INSERT INTO [BillDetail] VALUES (7, 36, 1)
-INSERT INTO [BillDetail] VALUES (7, 41, 1)
-INSERT INTO [BillDetail] VALUES (8, 0, 2)
-INSERT INTO [BillDetail] VALUES (9, 5, 1)
-INSERT INTO [BillDetail] VALUES (9, 10, 1)
-INSERT INTO [BillDetail] VALUES (9, 20, 1)
-GO
-
 -- Create proc
-CREATE PROC [getAccountID]
+-- get food tables
+CREATE PROC [procGetAccountID]
 	@username NVARCHAR(100), @password NVARCHAR(100)
 AS BEGIN 
-	SELECT [Accounts].[ID] FROM	[Accounts] WHERE [Username] = @username AND [Password] = @password
+	SELECT [Account].[ID] FROM	[Account] WHERE [Username] = @username AND [Password] = @password
 END
 GO
 
-CREATE PROC [getFoodTablesList] 
+-- get food tables
+CREATE PROC [procGetTable] 
 AS BEGIN
-	SELECT [FoodTables].[ID], [FoodTables].[Name], [TableStatus].[Name] AS [Status]
-	FROM [FoodTables] 
-		JOIN [TableStatus] ON  [TableStatus].[ID] = [FoodTables].[StatusID] 
+	SELECT * FROM [Table]
 END
 GO
 
-CREATE PROC [getUncheckedOutBill] 
+-- get bill by tableID, statusID
+CREATE PROC [procGetUncheckedOutBillID] 
 	@tableID INT
 AS BEGIN
-	SELECT * FROM [Bills] WHERE [TableID] = @tableID AND [StatusID] = 0
+	SELECT [ID] FROM [Bill] WHERE [TableID] = @tableID AND [StatusID] = 0		
 END
 GO
 
-CREATE PROC [getBillDetail]
+-- get BillDetail by billID
+CREATE PROC [procGetBillDetailByBillID]
 	@billID INT
 AS BEGIN
-	SELECT * FROM [BillDetail] WHERE [BillID] = @billID
+	SELECT [BillDetail].[ID], [Food].[Name] AS [FoodName], [Quantity], [Price], [Price]*[Quantity] AS [Total]
+	FROM [BillDetail]
+		JOIN [Food] ON [Food].[ID] = [BillDetail].[FoodID]
+	WHERE [BillID] = @billID
+END
+GO
+
+-- get FoodCategory
+CREATE PROC [procGetFoodCategory]
+AS BEGIN
+	SELECT * FROM [FoodCategory]
+END
+GO
+
+-- get food by CategoryID
+CREATE PROC [procGetFood]
+	@categoryID INT 
+AS BEGIN
+	SELECT * FROM [Food] 		
+	WHERE [CategoryID] = @categoryID
+END
+GO
+
+-- insert Food
+/*	
+	Nếu Table KHÔNG có Bill CHƯA thanh toán, tức có nghĩa là ko có bill đang hiện hành tại Table đó
+		Thì tạo một Bill mới tại Table đó: 
+			INSERT INTO [Bill] ([TableID]) VALUES (@tableID)
+		Sau đó thêm Food vào Bill đó tại BillDetail:
+			INSERT INTO [BillDetail] ([BillID], [FoodID], [Quantity]) VALUES (@billID, @foodID, @quantity)
+	Nếu Table đã có Bill CHƯA thanh toán, tức là đang có bill hiện hành tại Table đó, thì Kiểm tra:
+		Nếu Food thêm vào chưa có trong Bill thì thêm Food vào:
+			NSERT INTO [BillDetail] ([BillID], [FoodID], [Quantity]) VALUES (@billID, @foodID, @quantity)
+		Nếu Food thêm vào đã có trong Bill thì cập nhật lại Quantity cho Food đó:
+			UPDATE [BillDetail] SET [Quantity] = [Quantity] + @quantity WHERE [BillID] = @billID AND [FoodID] = @foodID
+			hoặc xoá nó if [Quantity] cập nhật lại thành 0
+*/
+
+
+CREATE PROC [procEditBill]
+	@tableID INT, @foodID INT, @quantity INT
+AS BEGIN
+IF @quantity <> 0 
+BEGIN	
+	DECLARE @billID INT = (SELECT [ID] FROM [Bill] WHERE [TableID] = @tableID AND [StatusID]=0)
+	IF @billID IS NULL 
+	BEGIN
+		IF @quantity > 0
+		BEGIN		
+			INSERT INTO [Bill] ([TableID]) VALUES (@tableID)
+			SET @billID = (SELECT @@IDENTITY)
+			INSERT INTO [BillDetail] ([BillID], [FoodID], [Quantity]) VALUES (@billID, @foodID, @quantity)
+			UPDATE [Table] SET [StatusID] = 1 WHERE [ID] = @tableID
+		END		
+	END
+	ELSE 
+	BEGIN
+		DECLARE @billDetailID INT = (SELECT [ID] FROM [BillDetail] WHERE [BillID] = @billID AND [FoodID] = @foodID)
+		IF @billDetailID IS NULL 
+		BEGIN		
+			IF @quantity > 0 INSERT INTO [BillDetail] VALUES (@billID, @foodID, @quantity)
+		END				
+		ELSE 
+		BEGIN
+			DECLARE @temp INT = (SELECT [Quantity] FROM [BillDetail] WHERE [ID] = @billDetailID) + @quantity
+			IF @temp <= 0
+			BEGIN
+				DELETE [BillDetail] WHERE [ID] = @billDetailID
+				IF NOT EXISTS (SELECT [ID] FROM [BillDetail] WHERE [BillID] = @billID) 
+				BEGIN
+					DELETE [Bill] WHERE [ID] = @billID
+					UPDATE [Table] SET [StatusID] = 0 WHERE [ID] = @tableID 
+				END 
+			END							
+			ELSE UPDATE [BillDetail] SET [Quantity] = @temp WHERE [ID] = @billDetailID
+		END			
+	END
+END
 END
 GO

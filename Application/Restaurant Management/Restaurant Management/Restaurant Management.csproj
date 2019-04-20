@@ -94,11 +94,15 @@
     <Compile Include="dao\AccountDao.cs" />
     <Compile Include="dao\BillDao.cs" />
     <Compile Include="dao\BillDetailDao.cs" />
+    <Compile Include="dao\FoodCategoryDao.cs" />
     <Compile Include="dao\DataProvider.cs" />
-    <Compile Include="dao\FoodTableDao.cs" />
+    <Compile Include="dao\FoodDao.cs" />
+    <Compile Include="dao\TableDao.cs" />
     <Compile Include="dto\Bill.cs" />
     <Compile Include="dto\BillDetail.cs" />
-    <Compile Include="dto\FoodTable.cs" />
+    <Compile Include="dto\Food.cs" />
+    <Compile Include="dto\FoodCategory.cs" />
+    <Compile Include="dto\Table.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="bul\frm\frmLogin.resx">
@@ -113,26 +117,25 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
@@ -146,25 +149,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\undo_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cancel_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\customer_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\properties_32x321.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ide_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\team_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\table_16x16.png" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
