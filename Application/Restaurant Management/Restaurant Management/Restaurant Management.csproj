@@ -85,6 +85,12 @@
     <Compile Include="bul\frm\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="bul\frm\frmPayBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bul\frm\frmPayBill.Designer.cs">
+      <DependentUpon>frmPayBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="bul\usc\uscTableManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="bul\frm\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bul\frm\frmPayBill.resx">
+      <DependentUpon>frmPayBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="bul\usc\uscTableManager.resx">
       <DependentUpon>uscTableManager.cs</DependentUpon>

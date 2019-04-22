@@ -27,7 +27,7 @@ namespace Restaurant_Management.dto
         }
 
         public Bill(DataRow row)
-        {
+        {            
             ID = (int)row["ID"];
             checkIn = (DateTime?)row["CheckIn"];
             checkOut = (row["CheckOut"].ToString() != "") ? (DateTime?)row["CheckOut"] : null;

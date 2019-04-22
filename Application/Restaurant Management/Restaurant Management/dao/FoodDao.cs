@@ -17,8 +17,7 @@ namespace Restaurant_Management.dao
         public List<Food> GetFood(int categoryID)
         {
             List<Food> foods = new List<Food>();
-            DataTable data = DataProvider.Instance.ExecuteQuery("[procGetFood] @categoryID", new object[] { categoryID });
-            foreach (DataRow row in data.Rows)
+            foreach (DataRow row in DataProvider.Instance.ExecuteQuery("[procGetFood] @categoryID", new object[] { categoryID }).Rows)
             {
                 foods.Add(new Food(row));
             }

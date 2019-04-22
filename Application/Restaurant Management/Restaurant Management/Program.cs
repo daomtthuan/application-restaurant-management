@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using DevExpress.UserSkins;
+using Restaurant_Management.bul.frm;
 
 namespace Restaurant_Management
 {
@@ -15,7 +16,7 @@ namespace Restaurant_Management
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             BonusSkins.Register();
-            Application.Run(new bul.frm.frmLogin());            
+            Application.Run(new frmLogin());            
         }
     }
 }

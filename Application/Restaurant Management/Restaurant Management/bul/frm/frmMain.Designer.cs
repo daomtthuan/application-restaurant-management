@@ -39,7 +39,6 @@
             this.aceLogout = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.aceExit = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
-            this.skinBarSubItem1 = new DevExpress.XtraBars.SkinBarSubItem();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             this.SuspendLayout();
@@ -132,8 +131,6 @@
             // 
             this.fluentDesignFormControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.fluentDesignFormControl1.FluentDesignForm = this;
-            this.fluentDesignFormControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.skinBarSubItem1});
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
@@ -141,15 +138,6 @@
             this.fluentDesignFormControl1.Size = new System.Drawing.Size(1278, 30);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
-            this.fluentDesignFormControl1.TitleItemLinks.Add(this.skinBarSubItem1);
-            // 
-            // skinBarSubItem1
-            // 
-            this.skinBarSubItem1.AllowSerializeChildren = DevExpress.Utils.DefaultBoolean.False;
-            this.skinBarSubItem1.Caption = "Giao diện";
-            this.skinBarSubItem1.Id = 1;
-            this.skinBarSubItem1.Name = "skinBarSubItem1";
-            this.skinBarSubItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.Caption;
             // 
             // frmMain
             // 
@@ -186,6 +174,5 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement aceExit;
         private DevExpress.XtraBars.Navigation.AccordionControlElement aceEmployeeManager;
         private DevExpress.XtraBars.Navigation.AccordionControlElement aceFoodTableManager;
-        private DevExpress.XtraBars.SkinBarSubItem skinBarSubItem1;
     }
 }

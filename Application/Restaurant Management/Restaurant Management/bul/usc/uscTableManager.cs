@@ -5,13 +5,8 @@ using Restaurant_Management.dao;
 using Restaurant_Management.dto;
 using DevExpress.LookAndFeel;
 using System.Data;
-using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraEditors.Controls;
 using System.Windows.Forms;
-using System.IO;
-using System.Linq;
-using DevExpress.Utils.Extensions;
-using DevExpress.XtraPrinting.Native;
+using Restaurant_Management.bul.frm;
 
 namespace Restaurant_Management.bul.usc
 {
@@ -19,26 +14,28 @@ namespace Restaurant_Management.bul.usc
     {
         public uscTableManager()
         {
-            InitializeComponent();
-
+            InitializeComponent();            
             LoadTable();
             LoadCategory();
-            LoadFoodName(0);
+            LoadFoodName(0);            
         }
 
         private void LoadCategory()
         {
+            Cursor = Cursors.WaitCursor;
             List<FoodCategory> categories = FoodCategoryDao.Instance.GetFoodCategory();
             lkuCategory.Properties.DataSource = categories;
             lkuCategory.Properties.DisplayMember = "Name";
             lkuCategory.Properties.ValueMember = "ID";
             lkuCategory.Properties.DropDownRows = (categories.Count <= 20) ? categories.Count : 20;
             lkuCategory.EditValue = 0;
+            Cursor = Cursors.Default;
         }
 
 
         private void LoadFoodName(int CategoryID)
         {
+            Cursor = Cursors.WaitCursor;
             List<Food> foods = FoodDao.Instance.GetFood(CategoryID);
             lkuFood.Properties.DataSource = foods;
             lkuFood.Properties.DisplayMember = "Name";
@@ -46,17 +43,19 @@ namespace Restaurant_Management.bul.usc
             lkuFood.Properties.DropDownRows = (foods.Count <= 20) ? foods.Count : 20;
             lkuFood.EditValue = foods[0].ID;
             spinQuantity.Value = 0;
+            Cursor = Cursors.Default;
         }
 
         private void LoadTable()
         {
+            Cursor = Cursors.WaitCursor;
             List<Table> tables = TableDao.Instance.LoadTable();
             foreach (Table item in tables)
             {
                 SimpleButton btn = new SimpleButton()
                 {
                     Name = "btnFoodTable" + item.ID.ToString(),
-                    Text = item.Name + Environment.NewLine + (item.StatusID == 1 ? "Có người" : "Trống")                 
+                    Text = item.Name + Environment.NewLine + (item.StatusID == 1 ? "Có người" : "Trống")
                 };
 
                 btn.Appearance.BackColor = (item.StatusID == 1) ? DXSkinColors.FillColors.Primary : btnAddFood.Appearance.BackColor;
@@ -64,43 +63,39 @@ namespace Restaurant_Management.bul.usc
                 btn.Click += Btn_Click;
                 layoutTable.Controls.Add(btn);
             }
+            Cursor = Cursors.Default;
         }
 
         private void ShowBill(int TableID)
         {
-            DataTable data = BillDetailDao.Instance.GetBillDetail(BillDao.Instance.GetUncheckedOutBillID(TableID));
+            Cursor = Cursors.WaitCursor;
+            int sumPrice = 0;
+            Bill bill = BillDao.Instance.GetUncheckedOutBill(TableID);
+            DataTable data = BillDetailDao.Instance.GetBillDetail((bill != null) ? bill.ID : -1);           
 
             data.Columns.RemoveAt(0);
             data.Columns[0].ColumnName = "Tên món";
             data.Columns[1].ColumnName = "Số lượng";
             data.Columns[2].ColumnName = "Đơn giá";
-            data.Columns[3].ColumnName = "Thành tiền";
+            data.Columns[3].ColumnName = "Giá tiền";
             ctrlBillDetail.DataSource = data;
             viewBillDetail.Columns[0].Width = 300;
 
-            int sumPrice = 0;
-            foreach (DataRow row in data.Rows)
-            {
-                sumPrice += (int)row[3];
-            }
+            lblCheckIn.Text = (bill != null) ? "Thời gian vào: " + bill.CheckIn.ToString() : "";            
 
+            foreach (DataRow row in data.Rows) sumPrice += (int)row[3];
             tbxSumPrice.EditValue = sumPrice;
             tbxTotalPrice.EditValue = sumPrice;
             spinSale.Value = 0;
+            btnPay.Tag = (bill != null) ? bill.ID : -1;
+            Cursor = Cursors.Default;
         }
 
         private void Btn_Click(object sender, EventArgs e)
-        {
+        {          
             viewBillDetail.Tag = (sender as SimpleButton).Tag;
             ShowBill((viewBillDetail.Tag as Table).ID);
-        }
-
-        private void ViewBillDetail_RowCellStyle(object sender, RowCellStyleEventArgs e)
-        {
-            GridView view = sender as GridView;
-            if (view == null) return;
-            if (e.Column.VisibleIndex == 2 || e.Column.VisibleIndex == 3)
-                e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            lblTableName.Text = "Tền bàn: " + (viewBillDetail.Tag as Table).Name; 
         }
 
         private void TbxSumPrice_EditValueChanged(object sender, EventArgs e)
@@ -111,6 +106,7 @@ namespace Restaurant_Management.bul.usc
 
         private void BtnAddFood_Click(object sender, EventArgs e)
         {
+            Cursor = Cursors.WaitCursor;
             if (spinQuantity.Value != 0)
             {
                 int tableID = (viewBillDetail.Tag as Table).ID;
@@ -130,6 +126,7 @@ namespace Restaurant_Management.bul.usc
                 }
                 spinQuantity.Value = 0;
             }
+            Cursor = Cursors.Default;
         }
 
         private void LkuCategory_EditValueChanged(object sender, EventArgs e)
@@ -168,7 +165,19 @@ namespace Restaurant_Management.bul.usc
 
         private void BtnPay_Click(object sender, EventArgs e)
         {
-
+            using (frmPayBill frmPayBill = new frmPayBill((int)btnPay.Tag, lblTableName.Text, lblCheckIn.Text, ctrlBillDetail.DataSource as DataTable, Int32.Parse(tbxSumPrice.Text), Int32.Parse(tbxSalePrice.Text), Int32.Parse(tbxTotalPrice.Text)))
+            {
+                frmPayBill.ShowDialog();
+                if (frmPayBill.isPay)
+                {
+                    int tableID = (viewBillDetail.Tag as Table).ID;
+                    SimpleButton btn = (SimpleButton)layoutTable.Controls[tableID];           
+                    btn.Text = btn.Text.Replace("Có người", "Trống");
+                    btn.Appearance.BackColor = btnAddFood.Appearance.BackColor;
+                    ctrlBillDetail.DataSource = null;
+                    layoutTable.Controls[tableID].Focus();
+                }
+            }
         }
     }
 }
