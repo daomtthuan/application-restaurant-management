@@ -4,22 +4,22 @@ using System.Data;
 
 namespace Restaurant_Management.dao
 {
-    class TableDao
+    class dao_Table
     {
-        private static TableDao instance;
+        private static dao_Table instance;
         
-        private TableDao() { }       
+        private dao_Table() { }       
 
         public List<Table> LoadTable()
         {
             List<Table> foodTablesList = new List<Table>();
-            foreach (DataRow item in DataProvider.Instance.ExecuteQuery("[procGetTable]").Rows)
+            foreach (DataRow item in DataProvider.Instance.ExecuteQuery("[proc_GetTable]").Rows)
             {
                 foodTablesList.Add(new Table(item));
             }
             return foodTablesList;
         }
 
-        public static TableDao Instance { get => instance ?? new TableDao(); private set => instance = value; }
+        public static dao_Table Instance { get => instance ?? new dao_Table(); private set => instance = value; }
     }
 }

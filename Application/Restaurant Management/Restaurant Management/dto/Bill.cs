@@ -14,16 +14,16 @@ namespace Restaurant_Management.dto
         private DateTime? checkOut;
         private int tableID;
         private int statusID;
-        private int sale;
+        private int discount;
 
-        public Bill(int id, DateTime? checkin, DateTime? checkout, int tableID, int statusID, int sale)
+        public Bill(int id, DateTime? checkin, DateTime? checkout, int tableID, int statusID, int discount)
         {
             ID = id;
             checkIn = checkin;
             checkOut = checkout;
             TableID = tableID;
             StatusID = statusID;
-            Sale = sale;
+            Discount = discount;
         }
 
         public Bill(DataRow row)
@@ -33,7 +33,7 @@ namespace Restaurant_Management.dto
             checkOut = (row["CheckOut"].ToString() != "") ? (DateTime?)row["CheckOut"] : null;
             TableID = (int)row["TableID"];
             StatusID = (int)row["StatusID"];
-            Sale = (int)row["Sale"];
+            Discount = (int)row["Discount"];
         }
 
         public int ID { get => iD; set => iD = value; }
@@ -41,6 +41,6 @@ namespace Restaurant_Management.dto
         public DateTime? CheckOut { get => checkOut; set => checkOut = value; }
         public int TableID { get => tableID; set => tableID = value; }
         public int StatusID { get => statusID; set => statusID = value; }
-        public int Sale { get => sale; set => sale = value; }
+        public int Discount { get => discount; set => discount = value; }
     }
 }

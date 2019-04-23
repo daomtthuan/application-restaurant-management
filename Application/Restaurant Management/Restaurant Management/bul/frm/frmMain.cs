@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
 using Restaurant_Management.bul.usc;
 
 namespace Restaurant_Management.bul.frm
@@ -15,7 +14,8 @@ namespace Restaurant_Management.bul.frm
             InitializeComponent();
             usc = new List<UserControl>()
             {
-                new uscTableManager() { Dock = DockStyle.Fill }
+                new uscTableManager() { Dock = DockStyle.Fill },
+                new uscRevenueManager() { Dock = DockStyle.Fill }
             };
 
             foreach (UserControl item in usc)
@@ -23,17 +23,20 @@ namespace Restaurant_Management.bul.frm
                 fluContainer.Controls.Add(item);
                 item.Hide();
             }
-        }
 
-        private void aceFoodTableManager_Click(object sender, EventArgs e)
-        {
+            fluContainer.Tag = usc[0];
             usc[0].Show();
         }
 
-        private void FrmMain_Load(object sender, EventArgs e)
+        private void ShowUsercontrol(UserControl usc)
         {
-            aceFoodTableManager_Click(sender, e);
+            Cursor = Cursors.WaitCursor;
+            (fluContainer.Tag as UserControl).Hide();
+            fluContainer.Tag = usc;
+            usc.Show();
+            Cursor = Cursors.Default;
         }
+
 
         private void AceExit_Click(object sender, EventArgs e)
         {
@@ -43,6 +46,16 @@ namespace Restaurant_Management.bul.frm
         private void AceLogout_Click(object sender, EventArgs e)
         {
             Dispose();
+        }
+
+        private void AceTableManager_Click(object sender, EventArgs e)
+        {
+            ShowUsercontrol(usc[0]);
+        }
+
+        private void AceRevenueManager_Click(object sender, EventArgs e)
+        {
+            ShowUsercontrol(usc[1]);
         }
     }
 }

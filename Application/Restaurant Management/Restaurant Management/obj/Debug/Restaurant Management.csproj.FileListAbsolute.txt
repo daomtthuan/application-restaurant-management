@@ -93,3 +93,4 @@ E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Man
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\ja\DevExpress.Office.v18.2.Core.resources.dll
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\bin\Debug\ru\DevExpress.Office.v18.2.Core.resources.dll
 E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant_Management.bul.frm.frmPayBill.resources
+E:\Github\restaurant-management\Application\Restaurant Management\Restaurant Management\obj\Debug\Restaurant_Management.bul.usc.uscRevenueManager.resources

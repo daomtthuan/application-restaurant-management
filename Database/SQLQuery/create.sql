@@ -87,10 +87,10 @@ CREATE TABLE [Bill] (
     [CheckOut] DATETIME,                            -- Thời gian ra
     [TableID]  INT      NOT NULL,                   -- Mã bàn ăn
     [StatusID] INT      NOT NULL DEFAULT 0,         -- Trạng thái hoá đơn
-    [Sale]     INT      NOT NULL DEFAULT 0,         -- Giảm giá
+    [Discount]     INT      NOT NULL DEFAULT 0,         -- Giảm giá
 
     CHECK ([CheckIn] <= [CheckOut]),
-    CHECK (0 <= [Sale] AND [Sale] <= 100),
+    CHECK (0 <= [Discount] AND [Discount] <= 100),
     FOREIGN KEY ([TableID]) REFERENCES [Table] ([ID]),
     FOREIGN KEY ([StatusID]) REFERENCES [BillStatus] ([ID]))
 GO
@@ -109,7 +109,7 @@ GO
 
 -- Create proc
 -- get food tables
-CREATE PROC [procGetAccountID]
+CREATE PROC [proc_GetAccountID]
     @username NVARCHAR(100), @password NVARCHAR(100)
 AS
 BEGIN
@@ -118,7 +118,7 @@ END
 GO
 
 -- get food tables
-CREATE PROC [procGetTable]
+CREATE PROC [proc_GetTable]
 AS
 BEGIN
     SELECT [ID], [Name], [StatusID] FROM [Table]
@@ -126,19 +126,19 @@ END
 GO
 
 -- get bill by tableID, statusID
-CREATE PROC [procGetBill]
+CREATE PROC [proc_GetBill]
     @tableID INT, @statusID INT
 AS
 BEGIN
     IF @statusID = -1
-        SELECT [ID], [CheckIn], [CheckOut], [TableID], [StatusID], [Sale] FROM [Bill] WHERE [TableID] = @tableID
+        SELECT [ID], [CheckIn], [CheckOut], [TableID], [StatusID], [Discount] FROM [Bill] WHERE [TableID] = @tableID
     ELSE
-        SELECT [ID], [CheckIn], [CheckOut], [TableID], [StatusID], [Sale] FROM [Bill] WHERE [TableID] = @tableID AND [StatusID] = @statusID
+        SELECT [ID], [CheckIn], [CheckOut], [TableID], [StatusID], [Discount] FROM [Bill] WHERE [TableID] = @tableID AND [StatusID] = @statusID
 END
 GO
 
 -- get BillDetail by billID
-CREATE PROC [procGetBillDetailByBillID] @billID INT
+CREATE PROC [proc_GetBillDetailByBillID] @billID INT
 AS
 BEGIN
     SELECT [BillDetail].[ID], [Food].[Name] AS [FoodName], [Quantity], [Price], [Price] * [Quantity] AS [Total]
@@ -149,7 +149,7 @@ END
 GO
 
 -- get FoodCategory
-CREATE PROC [procGetFoodCategory]
+CREATE PROC [proc_GetFoodCategory]
 AS
 BEGIN
     SELECT [ID], [Name] FROM [FoodCategory]
@@ -157,8 +157,7 @@ END
 GO
 
 -- get food by CategoryID
-CREATE PROC [procGetFood]
-	@categoryID INT
+CREATE PROC [proc_GetFood] @categoryID INT
 AS
 BEGIN
     SELECT [ID], [Name], [CategoryID], [Price] FROM [Food] WHERE [CategoryID] = @categoryID
@@ -166,12 +165,12 @@ END
 GO
 
 -- update bill for pay
-CREATE PROC [procPayBill]
-     @billID INT, @sale INT
+CREATE PROC [proc_PayBill]
+    @billID INT, @discount INT
 AS
 BEGIN
-    UPDATE [Bill] SET [StatusID] = 1, [Sale] = @sale, [CheckOut] = GETDATE() WHERE [ID] = @billID
-	UPDATE [Table] SET [StatusID] = 0 WHERE [ID] = (SELECT [TableID] FROM [Bill] WHERE [ID] = @billID)
+    UPDATE [Bill] SET [StatusID] = 1, [Discount] = @discount, [CheckOut] = GETDATE() WHERE [ID] = @billID
+    UPDATE [Table] SET [StatusID] = 0 WHERE [ID] = (SELECT [TableID] FROM [Bill] WHERE [ID] = @billID)
 END
 GO
 
@@ -191,7 +190,7 @@ GO
 */
 
 
-CREATE PROC [procEditBill]
+CREATE PROC [proc_EditBill]
     @tableID INT, @foodID INT, @quantity INT
 AS
 BEGIN

@@ -9,25 +9,25 @@ namespace Restaurant_Management.bul.frm
     {
         public static bool isPay;
 
-        public frmPayBill(int id, string name, string checkin, DataTable bill, int sumprice, int saleprice, int totalprice)
+        public frmPayBill(int id, string name, string checkin, DataTable bill, int sumprice, int discountprice, int totalprice)
         {
             InitializeComponent();
             lblTableName.Text = name;
             lblCheckIn.Text = checkin;
             ctrlBillDetail.DataSource = bill;
             tbxSumPrice.Text = sumprice.ToString("0,0 VNĐ");
-            tbxSalePrice.Text = saleprice.ToString("0,0 VNĐ");
+            tbxDiscountPrice.Text = discountprice.ToString("0,0 VNĐ");
             tbxTotalPrice.Text = totalprice.ToString("0,0 VNĐ");
             viewBillDetail.Columns[0].Width = 300;
             Tag = id;
-            tbxSalePrice.Tag = (100 * saleprice) / sumprice;
+            tbxDiscountPrice.Tag = (100 * discountprice) / sumprice;
             isPay = false;
         }
 
         private void BtnPay_Click(object sender, System.EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
-            BillDao.Instance.PayBill((int)Tag, (int)tbxSalePrice.Tag);
+            dao_Bill.Instance.PayBill((int)Tag, (int)tbxDiscountPrice.Tag);
             isPay = true;
             Cursor = Cursors.Default;
             Close();

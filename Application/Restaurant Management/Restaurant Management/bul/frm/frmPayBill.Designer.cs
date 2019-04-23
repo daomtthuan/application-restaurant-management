@@ -32,7 +32,7 @@
             this.lblTableName = new DevExpress.XtraEditors.LabelControl();
             this.lblCheckIn = new DevExpress.XtraEditors.LabelControl();
             this.btnPay = new DevExpress.XtraEditors.SimpleButton();
-            this.tbxSalePrice = new DevExpress.XtraEditors.TextEdit();
+            this.tbxDiscountPrice = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.tbxSumPrice = new DevExpress.XtraEditors.TextEdit();
@@ -57,7 +57,7 @@
             this.Total = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
             this.layoutControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbxSalePrice.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbxDiscountPrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbxSumPrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbxTotalPrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlBillDetail)).BeginInit();
@@ -80,7 +80,7 @@
             this.layoutControl.Controls.Add(this.lblTableName);
             this.layoutControl.Controls.Add(this.lblCheckIn);
             this.layoutControl.Controls.Add(this.btnPay);
-            this.layoutControl.Controls.Add(this.tbxSalePrice);
+            this.layoutControl.Controls.Add(this.tbxDiscountPrice);
             this.layoutControl.Controls.Add(this.labelControl3);
             this.layoutControl.Controls.Add(this.labelControl2);
             this.layoutControl.Controls.Add(this.tbxSumPrice);
@@ -127,18 +127,18 @@
             this.btnPay.Text = "Thanh toán";
             this.btnPay.Click += new System.EventHandler(this.BtnPay_Click);
             // 
-            // tbxSalePrice
+            // tbxDiscountPrice
             // 
-            this.tbxSalePrice.EditValue = "0";
-            this.tbxSalePrice.Location = new System.Drawing.Point(121, 500);
-            this.tbxSalePrice.Name = "tbxSalePrice";
-            this.tbxSalePrice.Properties.Appearance.Options.UseTextOptions = true;
-            this.tbxSalePrice.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.tbxSalePrice.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.tbxSalePrice.Properties.ReadOnly = true;
-            this.tbxSalePrice.Size = new System.Drawing.Size(318, 24);
-            this.tbxSalePrice.StyleController = this.layoutControl;
-            this.tbxSalePrice.TabIndex = 10;
+            this.tbxDiscountPrice.EditValue = "0";
+            this.tbxDiscountPrice.Location = new System.Drawing.Point(121, 500);
+            this.tbxDiscountPrice.Name = "tbxDiscountPrice";
+            this.tbxDiscountPrice.Properties.Appearance.Options.UseTextOptions = true;
+            this.tbxDiscountPrice.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.tbxDiscountPrice.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.tbxDiscountPrice.Properties.ReadOnly = true;
+            this.tbxDiscountPrice.Size = new System.Drawing.Size(318, 24);
+            this.tbxDiscountPrice.StyleController = this.layoutControl;
+            this.tbxDiscountPrice.TabIndex = 10;
             // 
             // labelControl3
             // 
@@ -313,7 +313,7 @@
             // 
             // layoutControlItem14
             // 
-            this.layoutControlItem14.Control = this.tbxSalePrice;
+            this.layoutControlItem14.Control = this.tbxDiscountPrice;
             this.layoutControlItem14.Location = new System.Drawing.Point(109, 488);
             this.layoutControlItem14.Name = "layoutControlItem14";
             this.layoutControlItem14.Size = new System.Drawing.Size(322, 28);
@@ -416,7 +416,7 @@
             this.Text = "Thanh toán hoá đơn";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
             this.layoutControl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tbxSalePrice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbxDiscountPrice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbxSumPrice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbxTotalPrice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlBillDetail)).EndInit();
@@ -442,7 +442,7 @@
         private DevExpress.XtraEditors.LabelControl lblTableName;
         private DevExpress.XtraEditors.LabelControl lblCheckIn;
         private DevExpress.XtraEditors.SimpleButton btnPay;
-        private DevExpress.XtraEditors.TextEdit tbxSalePrice;
+        private DevExpress.XtraEditors.TextEdit tbxDiscountPrice;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit tbxSumPrice;

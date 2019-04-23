@@ -33,7 +33,8 @@
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.aceAdmin = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.aceEmployeeManager = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.aceFoodTableManager = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.aceTableManager = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.aceRevenueManager = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.aceSetting = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.aceInformation = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.aceLogout = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -46,10 +47,10 @@
             // fluContainer
             // 
             this.fluContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fluContainer.Location = new System.Drawing.Point(48, 30);
+            this.fluContainer.Location = new System.Drawing.Point(46, 30);
             this.fluContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fluContainer.Name = "fluContainer";
-            this.fluContainer.Size = new System.Drawing.Size(1230, 726);
+            this.fluContainer.Size = new System.Drawing.Size(1252, 726);
             this.fluContainer.TabIndex = 0;
             // 
             // accordionControl1
@@ -65,14 +66,15 @@
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.OptionsMinimizing.State = DevExpress.XtraBars.Navigation.AccordionControlState.Minimized;
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Hidden;
-            this.accordionControl1.Size = new System.Drawing.Size(48, 726);
+            this.accordionControl1.Size = new System.Drawing.Size(46, 726);
             this.accordionControl1.TabIndex = 1;
             // 
             // aceAdmin
             // 
             this.aceAdmin.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.aceEmployeeManager,
-            this.aceFoodTableManager});
+            this.aceTableManager,
+            this.aceRevenueManager});
             this.aceAdmin.Expanded = true;
             this.aceAdmin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("aceAdmin.ImageOptions.Image")));
             this.aceAdmin.Name = "aceAdmin";
@@ -84,12 +86,19 @@
             this.aceEmployeeManager.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.aceEmployeeManager.Text = "Nhân viên";
             // 
-            // aceFoodTableManager
+            // aceTableManager
             // 
-            this.aceFoodTableManager.Name = "aceFoodTableManager";
-            this.aceFoodTableManager.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.aceFoodTableManager.Text = "Bàn ăn";
-            this.aceFoodTableManager.Click += new System.EventHandler(this.aceFoodTableManager_Click);
+            this.aceTableManager.Name = "aceTableManager";
+            this.aceTableManager.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.aceTableManager.Text = "Bàn ăn";
+            this.aceTableManager.Click += new System.EventHandler(this.AceTableManager_Click);
+            // 
+            // aceRevenueManager
+            // 
+            this.aceRevenueManager.Name = "aceRevenueManager";
+            this.aceRevenueManager.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.aceRevenueManager.Text = "Doanh thu";
+            this.aceRevenueManager.Click += new System.EventHandler(this.AceRevenueManager_Click);
             // 
             // aceSetting
             // 
@@ -135,7 +144,7 @@
             this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
             this.fluentDesignFormControl1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1278, 30);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1298, 30);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             // 
@@ -143,7 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1278, 756);
+            this.ClientSize = new System.Drawing.Size(1298, 756);
             this.ControlContainer = this.fluContainer;
             this.Controls.Add(this.fluContainer);
             this.Controls.Add(this.accordionControl1);
@@ -155,7 +164,6 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý quán ăn";
-            this.Load += new System.EventHandler(this.FrmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
             this.ResumeLayout(false);
@@ -173,6 +181,7 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement aceLogout;
         private DevExpress.XtraBars.Navigation.AccordionControlElement aceExit;
         private DevExpress.XtraBars.Navigation.AccordionControlElement aceEmployeeManager;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement aceFoodTableManager;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement aceTableManager;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement aceRevenueManager;
     }
 }

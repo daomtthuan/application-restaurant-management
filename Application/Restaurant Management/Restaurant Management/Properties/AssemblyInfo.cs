@@ -7,10 +7,10 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Restaurant Management")]
 [assembly: AssemblyDescription("Phần mềm quản lý quán ăn")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Daomt Thuan")]
+[assembly: AssemblyCompany("Dao Minh Trung Thuan")]
 [assembly: AssemblyProduct("Quản lý quán ăn")]
-[assembly: AssemblyCopyright("Copyright © 2019 Daomt Thuan")]
-[assembly: AssemblyTrademark("Daomt Thuan")]
+[assembly: AssemblyCopyright("Copyright © 2019 Dao Minh Trung Thuan")]
+[assembly: AssemblyTrademark("Dao Minh Trung Thuan")]
 [assembly: AssemblyCulture("")]
 // Setting ComVisible to false makes the types in this assembly not visible
 // to COM components.  If you need to access a type in this assembly from

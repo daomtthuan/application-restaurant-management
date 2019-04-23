@@ -14,7 +14,7 @@ namespace Restaurant_Management.bul.frm
 
         private int getAccountID(string username, string password)
         {
-            return AccountDao.Instance.GetAccountID(username, password);
+            return dao_Account.Instance.GetAccountID(username, password);
         }
 
         private void BtnLogin_Click(object sender, EventArgs e)

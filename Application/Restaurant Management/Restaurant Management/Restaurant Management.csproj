@@ -91,19 +91,25 @@
     <Compile Include="bul\frm\frmPayBill.Designer.cs">
       <DependentUpon>frmPayBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="bul\usc\uscRevenueManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="bul\usc\uscRevenueManager.Designer.cs">
+      <DependentUpon>uscRevenueManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="bul\usc\uscTableManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="bul\usc\uscTableManager.Designer.cs">
       <DependentUpon>uscTableManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="dao\AccountDao.cs" />
-    <Compile Include="dao\BillDao.cs" />
-    <Compile Include="dao\BillDetailDao.cs" />
-    <Compile Include="dao\FoodCategoryDao.cs" />
+    <Compile Include="dao\dao_Account.cs" />
+    <Compile Include="dao\dao_Bill.cs" />
+    <Compile Include="dao\dao_BillDetail.cs" />
+    <Compile Include="dao\dao_FoodCategory.cs" />
     <Compile Include="dao\DataProvider.cs" />
-    <Compile Include="dao\FoodDao.cs" />
-    <Compile Include="dao\TableDao.cs" />
+    <Compile Include="dao\dao_Food.cs" />
+    <Compile Include="dao\dao_Table.cs" />
     <Compile Include="dto\Bill.cs" />
     <Compile Include="dto\BillDetail.cs" />
     <Compile Include="dto\Food.cs" />
@@ -119,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="bul\frm\frmPayBill.resx">
       <DependentUpon>frmPayBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bul\usc\uscRevenueManager.resx">
+      <DependentUpon>uscRevenueManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="bul\usc\uscTableManager.resx">
       <DependentUpon>uscTableManager.cs</DependentUpon>

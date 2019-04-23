@@ -31,29 +31,28 @@ namespace Restaurant_Management.bul.usc
         private void InitializeComponent()
         {
             this.layoutTable = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblCategory = new DevExpress.XtraEditors.LabelControl();
+            this.lbl_Category = new DevExpress.XtraEditors.LabelControl();
             this.layoutControl = new DevExpress.XtraLayout.LayoutControl();
-            this.lblTableName = new DevExpress.XtraEditors.LabelControl();
-            this.lblCheckIn = new DevExpress.XtraEditors.LabelControl();
-            this.btnPay = new DevExpress.XtraEditors.SimpleButton();
-            this.spinSale = new DevExpress.XtraEditors.SpinEdit();
-            this.tbxSalePrice = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.tbxSumPrice = new DevExpress.XtraEditors.TextEdit();
-            this.tbxTotalPrice = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.lkuFood = new DevExpress.XtraEditors.LookUpEdit();
-            this.lkuCategory = new DevExpress.XtraEditors.LookUpEdit();
-            this.lblQuantity = new DevExpress.XtraEditors.LabelControl();
-            this.spinQuantity = new DevExpress.XtraEditors.SpinEdit();
-            this.btnAddFood = new DevExpress.XtraEditors.SimpleButton();
-            this.lblFood = new DevExpress.XtraEditors.LabelControl();
+            this.lbl_TableName = new DevExpress.XtraEditors.LabelControl();
+            this.lbl_CheckIn = new DevExpress.XtraEditors.LabelControl();
+            this.btn_Pay = new DevExpress.XtraEditors.SimpleButton();
+            this.spin_Discount = new DevExpress.XtraEditors.SpinEdit();
+            this.tbx_DiscountPrice = new DevExpress.XtraEditors.TextEdit();
+            this.lbl_TotalPrice = new DevExpress.XtraEditors.LabelControl();
+            this.lbl_Discount = new DevExpress.XtraEditors.LabelControl();
+            this.tbx_SumPrice = new DevExpress.XtraEditors.TextEdit();
+            this.tbx_TotalPrice = new DevExpress.XtraEditors.TextEdit();
+            this.lbl_SumPrice = new DevExpress.XtraEditors.LabelControl();
+            this.lku_Food = new DevExpress.XtraEditors.LookUpEdit();
+            this.lku_Category = new DevExpress.XtraEditors.LookUpEdit();
+            this.lbl_Quantity = new DevExpress.XtraEditors.LabelControl();
+            this.spin_Quantity = new DevExpress.XtraEditors.SpinEdit();
+            this.btn_EditBill = new DevExpress.XtraEditors.SimpleButton();
+            this.lbl_Food = new DevExpress.XtraEditors.LabelControl();
             this.ctrlBillDetail = new DevExpress.XtraGrid.GridControl();
             this.viewBillDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gropAddFood = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.gruop_AddFood = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -61,7 +60,7 @@ namespace Restaurant_Management.bul.usc
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.groupBill = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.group_Bill = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -73,6 +72,8 @@ namespace Restaurant_Management.bul.usc
             this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.group_Table = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.FoodName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Quantity = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -80,18 +81,17 @@ namespace Restaurant_Management.bul.usc
             this.Total = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
             this.layoutControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spinSale.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbxSalePrice.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbxSumPrice.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbxTotalPrice.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkuFood.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkuCategory.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinQuantity.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spin_Discount.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbx_DiscountPrice.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbx_SumPrice.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbx_TotalPrice.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lku_Food.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lku_Category.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spin_Quantity.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlBillDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewBillDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gropAddFood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gruop_AddFood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
@@ -99,7 +99,7 @@ namespace Restaurant_Management.bul.usc
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupBill)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.group_Bill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
@@ -111,46 +111,48 @@ namespace Restaurant_Management.bul.usc
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.group_Table)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutTable
             // 
             this.layoutTable.AutoScroll = true;
-            this.layoutTable.Location = new System.Drawing.Point(13, 13);
+            this.layoutTable.Location = new System.Drawing.Point(16, 41);
             this.layoutTable.Name = "layoutTable";
-            this.layoutTable.Size = new System.Drawing.Size(599, 687);
+            this.layoutTable.Size = new System.Drawing.Size(593, 656);
             this.layoutTable.TabIndex = 8;
             this.layoutTable.Resize += new System.EventHandler(this.LayoutTable_Resize);
             // 
-            // lblCategory
+            // lbl_Category
             // 
-            this.lblCategory.Location = new System.Drawing.Point(625, 45);
-            this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(77, 26);
-            this.lblCategory.StyleController = this.layoutControl;
-            this.lblCategory.TabIndex = 11;
-            this.lblCategory.Text = "Danh mục";
+            this.lbl_Category.Location = new System.Drawing.Point(625, 45);
+            this.lbl_Category.Name = "lbl_Category";
+            this.lbl_Category.Size = new System.Drawing.Size(77, 26);
+            this.lbl_Category.StyleController = this.layoutControl;
+            this.lbl_Category.TabIndex = 11;
+            this.lbl_Category.Text = "Danh mục";
             // 
             // layoutControl
             // 
-            this.layoutControl.Controls.Add(this.lblTableName);
-            this.layoutControl.Controls.Add(this.lblCheckIn);
-            this.layoutControl.Controls.Add(this.btnPay);
-            this.layoutControl.Controls.Add(this.spinSale);
-            this.layoutControl.Controls.Add(this.tbxSalePrice);
-            this.layoutControl.Controls.Add(this.labelControl3);
-            this.layoutControl.Controls.Add(this.labelControl2);
-            this.layoutControl.Controls.Add(this.tbxSumPrice);
-            this.layoutControl.Controls.Add(this.tbxTotalPrice);
-            this.layoutControl.Controls.Add(this.labelControl1);
-            this.layoutControl.Controls.Add(this.lkuFood);
-            this.layoutControl.Controls.Add(this.lkuCategory);
-            this.layoutControl.Controls.Add(this.lblQuantity);
-            this.layoutControl.Controls.Add(this.spinQuantity);
-            this.layoutControl.Controls.Add(this.btnAddFood);
-            this.layoutControl.Controls.Add(this.lblFood);
-            this.layoutControl.Controls.Add(this.lblCategory);
+            this.layoutControl.Controls.Add(this.lbl_TableName);
+            this.layoutControl.Controls.Add(this.lbl_CheckIn);
+            this.layoutControl.Controls.Add(this.btn_Pay);
+            this.layoutControl.Controls.Add(this.spin_Discount);
+            this.layoutControl.Controls.Add(this.tbx_DiscountPrice);
+            this.layoutControl.Controls.Add(this.lbl_TotalPrice);
+            this.layoutControl.Controls.Add(this.lbl_Discount);
+            this.layoutControl.Controls.Add(this.tbx_SumPrice);
+            this.layoutControl.Controls.Add(this.tbx_TotalPrice);
+            this.layoutControl.Controls.Add(this.lbl_SumPrice);
+            this.layoutControl.Controls.Add(this.lku_Food);
+            this.layoutControl.Controls.Add(this.lku_Category);
+            this.layoutControl.Controls.Add(this.lbl_Quantity);
+            this.layoutControl.Controls.Add(this.spin_Quantity);
+            this.layoutControl.Controls.Add(this.btn_EditBill);
+            this.layoutControl.Controls.Add(this.lbl_Food);
+            this.layoutControl.Controls.Add(this.lbl_Category);
             this.layoutControl.Controls.Add(this.layoutTable);
             this.layoutControl.Controls.Add(this.ctrlBillDetail);
             this.layoutControl.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -162,226 +164,226 @@ namespace Restaurant_Management.bul.usc
             this.layoutControl.TabIndex = 8;
             this.layoutControl.Text = "layoutControl1";
             // 
-            // lblTableName
+            // lbl_TableName
             // 
-            this.lblTableName.Location = new System.Drawing.Point(623, 144);
-            this.lblTableName.Name = "lblTableName";
-            this.lblTableName.Size = new System.Drawing.Size(301, 29);
-            this.lblTableName.StyleController = this.layoutControl;
-            this.lblTableName.TabIndex = 0;
-            this.lblTableName.Text = "Tên bàn:";
+            this.lbl_TableName.Location = new System.Drawing.Point(623, 144);
+            this.lbl_TableName.Name = "lbl_TableName";
+            this.lbl_TableName.Size = new System.Drawing.Size(301, 29);
+            this.lbl_TableName.StyleController = this.layoutControl;
+            this.lbl_TableName.TabIndex = 0;
+            this.lbl_TableName.Text = "Tên bàn:";
             // 
-            // lblCheckIn
+            // lbl_CheckIn
             // 
-            this.lblCheckIn.Location = new System.Drawing.Point(928, 144);
-            this.lblCheckIn.Name = "lblCheckIn";
-            this.lblCheckIn.Size = new System.Drawing.Size(274, 29);
-            this.lblCheckIn.StyleController = this.layoutControl;
-            this.lblCheckIn.TabIndex = 0;
-            this.lblCheckIn.Text = "Thời gian vào";
+            this.lbl_CheckIn.Location = new System.Drawing.Point(928, 144);
+            this.lbl_CheckIn.Name = "lbl_CheckIn";
+            this.lbl_CheckIn.Size = new System.Drawing.Size(274, 29);
+            this.lbl_CheckIn.StyleController = this.layoutControl;
+            this.lbl_CheckIn.TabIndex = 0;
+            this.lbl_CheckIn.Text = "Thời gian vào";
             // 
-            // btnPay
+            // btn_Pay
             // 
-            this.btnPay.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
-            this.btnPay.Appearance.Options.UseBackColor = true;
-            this.btnPay.Enabled = false;
-            this.btnPay.Location = new System.Drawing.Point(1089, 609);
-            this.btnPay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(113, 86);
-            this.btnPay.StyleController = this.layoutControl;
-            this.btnPay.TabIndex = 12;
-            this.btnPay.Text = "Thanh toán";
-            this.btnPay.Click += new System.EventHandler(this.BtnPay_Click);
+            this.btn_Pay.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
+            this.btn_Pay.Appearance.Options.UseBackColor = true;
+            this.btn_Pay.Enabled = false;
+            this.btn_Pay.Location = new System.Drawing.Point(1089, 609);
+            this.btn_Pay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Pay.Name = "btn_Pay";
+            this.btn_Pay.Size = new System.Drawing.Size(113, 86);
+            this.btn_Pay.StyleController = this.layoutControl;
+            this.btn_Pay.TabIndex = 12;
+            this.btn_Pay.Text = "Thanh toán";
+            this.btn_Pay.Click += new System.EventHandler(this.Btn_Pay_Click);
             // 
-            // spinSale
+            // spin_Discount
             // 
-            this.spinSale.EditValue = new decimal(new int[] {
+            this.spin_Discount.EditValue = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.spinSale.Location = new System.Drawing.Point(708, 639);
-            this.spinSale.Name = "spinSale";
-            this.spinSale.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.spin_Discount.Location = new System.Drawing.Point(708, 639);
+            this.spin_Discount.Name = "spin_Discount";
+            this.spin_Discount.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinSale.Properties.IsFloatValue = false;
-            this.spinSale.Properties.Mask.EditMask = "P";
-            this.spinSale.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.spinSale.Properties.MaxValue = new decimal(new int[] {
+            this.spin_Discount.Properties.IsFloatValue = false;
+            this.spin_Discount.Properties.Mask.EditMask = "P";
+            this.spin_Discount.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.spin_Discount.Properties.MaxValue = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.spinSale.Properties.ReadOnly = true;
-            this.spinSale.Size = new System.Drawing.Size(50, 26);
-            this.spinSale.StyleController = this.layoutControl;
-            this.spinSale.TabIndex = 9;
-            this.spinSale.EditValueChanged += new System.EventHandler(this.SpinSale_EditValueChanged);
+            this.spin_Discount.Properties.ReadOnly = true;
+            this.spin_Discount.Size = new System.Drawing.Size(50, 26);
+            this.spin_Discount.StyleController = this.layoutControl;
+            this.spin_Discount.TabIndex = 9;
+            this.spin_Discount.EditValueChanged += new System.EventHandler(this.SpinDiscount_EditValueChanged);
             // 
-            // tbxSalePrice
+            // tbx_DiscountPrice
             // 
-            this.tbxSalePrice.EditValue = "0";
-            this.tbxSalePrice.Location = new System.Drawing.Point(762, 639);
-            this.tbxSalePrice.Name = "tbxSalePrice";
-            this.tbxSalePrice.Properties.Appearance.Options.UseTextOptions = true;
-            this.tbxSalePrice.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.tbxSalePrice.Properties.ReadOnly = true;
-            this.tbxSalePrice.Size = new System.Drawing.Size(323, 26);
-            this.tbxSalePrice.StyleController = this.layoutControl;
-            this.tbxSalePrice.TabIndex = 10;
+            this.tbx_DiscountPrice.EditValue = "0";
+            this.tbx_DiscountPrice.Location = new System.Drawing.Point(762, 639);
+            this.tbx_DiscountPrice.Name = "tbx_DiscountPrice";
+            this.tbx_DiscountPrice.Properties.Appearance.Options.UseTextOptions = true;
+            this.tbx_DiscountPrice.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.tbx_DiscountPrice.Properties.ReadOnly = true;
+            this.tbx_DiscountPrice.Size = new System.Drawing.Size(323, 26);
+            this.tbx_DiscountPrice.StyleController = this.layoutControl;
+            this.tbx_DiscountPrice.TabIndex = 10;
             // 
-            // labelControl3
+            // lbl_TotalPrice
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelControl3.Appearance.ForeColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Appearance.Options.UseForeColor = true;
-            this.labelControl3.Location = new System.Drawing.Point(623, 669);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(81, 26);
-            this.labelControl3.StyleController = this.layoutControl;
-            this.labelControl3.TabIndex = 6;
-            this.labelControl3.Text = "Thành tiền";
+            this.lbl_TotalPrice.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbl_TotalPrice.Appearance.ForeColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
+            this.lbl_TotalPrice.Appearance.Options.UseFont = true;
+            this.lbl_TotalPrice.Appearance.Options.UseForeColor = true;
+            this.lbl_TotalPrice.Location = new System.Drawing.Point(623, 669);
+            this.lbl_TotalPrice.Name = "lbl_TotalPrice";
+            this.lbl_TotalPrice.Size = new System.Drawing.Size(81, 26);
+            this.lbl_TotalPrice.StyleController = this.layoutControl;
+            this.lbl_TotalPrice.TabIndex = 6;
+            this.lbl_TotalPrice.Text = "Thành tiền";
             // 
-            // labelControl2
+            // lbl_Discount
             // 
-            this.labelControl2.Location = new System.Drawing.Point(623, 639);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(81, 26);
-            this.labelControl2.StyleController = this.layoutControl;
-            this.labelControl2.TabIndex = 6;
-            this.labelControl2.Text = "Giảm giá";
+            this.lbl_Discount.Location = new System.Drawing.Point(623, 639);
+            this.lbl_Discount.Name = "lbl_Discount";
+            this.lbl_Discount.Size = new System.Drawing.Size(81, 26);
+            this.lbl_Discount.StyleController = this.layoutControl;
+            this.lbl_Discount.TabIndex = 6;
+            this.lbl_Discount.Text = "Giảm giá";
             // 
-            // tbxSumPrice
+            // tbx_SumPrice
             // 
-            this.tbxSumPrice.EditValue = "0";
-            this.tbxSumPrice.Location = new System.Drawing.Point(708, 609);
-            this.tbxSumPrice.Name = "tbxSumPrice";
-            this.tbxSumPrice.Properties.Appearance.Options.UseTextOptions = true;
-            this.tbxSumPrice.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.tbxSumPrice.Properties.ReadOnly = true;
-            this.tbxSumPrice.Size = new System.Drawing.Size(377, 26);
-            this.tbxSumPrice.StyleController = this.layoutControl;
-            this.tbxSumPrice.TabIndex = 8;
-            this.tbxSumPrice.EditValueChanged += new System.EventHandler(this.TbxSumPrice_EditValueChanged);
+            this.tbx_SumPrice.EditValue = "0";
+            this.tbx_SumPrice.Location = new System.Drawing.Point(708, 609);
+            this.tbx_SumPrice.Name = "tbx_SumPrice";
+            this.tbx_SumPrice.Properties.Appearance.Options.UseTextOptions = true;
+            this.tbx_SumPrice.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.tbx_SumPrice.Properties.ReadOnly = true;
+            this.tbx_SumPrice.Size = new System.Drawing.Size(377, 26);
+            this.tbx_SumPrice.StyleController = this.layoutControl;
+            this.tbx_SumPrice.TabIndex = 8;
+            this.tbx_SumPrice.EditValueChanged += new System.EventHandler(this.TbxSumPrice_EditValueChanged);
             // 
-            // tbxTotalPrice
+            // tbx_TotalPrice
             // 
-            this.tbxTotalPrice.EditValue = "0";
-            this.tbxTotalPrice.Location = new System.Drawing.Point(708, 669);
-            this.tbxTotalPrice.Name = "tbxTotalPrice";
-            this.tbxTotalPrice.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.tbxTotalPrice.Properties.Appearance.ForeColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
-            this.tbxTotalPrice.Properties.Appearance.Options.UseFont = true;
-            this.tbxTotalPrice.Properties.Appearance.Options.UseForeColor = true;
-            this.tbxTotalPrice.Properties.Appearance.Options.UseTextOptions = true;
-            this.tbxTotalPrice.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.tbxTotalPrice.Properties.ReadOnly = true;
-            this.tbxTotalPrice.Size = new System.Drawing.Size(377, 26);
-            this.tbxTotalPrice.StyleController = this.layoutControl;
-            this.tbxTotalPrice.TabIndex = 11;
+            this.tbx_TotalPrice.EditValue = "0";
+            this.tbx_TotalPrice.Location = new System.Drawing.Point(708, 669);
+            this.tbx_TotalPrice.Name = "tbx_TotalPrice";
+            this.tbx_TotalPrice.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.tbx_TotalPrice.Properties.Appearance.ForeColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
+            this.tbx_TotalPrice.Properties.Appearance.Options.UseFont = true;
+            this.tbx_TotalPrice.Properties.Appearance.Options.UseForeColor = true;
+            this.tbx_TotalPrice.Properties.Appearance.Options.UseTextOptions = true;
+            this.tbx_TotalPrice.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.tbx_TotalPrice.Properties.ReadOnly = true;
+            this.tbx_TotalPrice.Size = new System.Drawing.Size(377, 26);
+            this.tbx_TotalPrice.StyleController = this.layoutControl;
+            this.tbx_TotalPrice.TabIndex = 11;
             // 
-            // labelControl1
+            // lbl_SumPrice
             // 
-            this.labelControl1.Location = new System.Drawing.Point(623, 609);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(81, 26);
-            this.labelControl1.StyleController = this.layoutControl;
-            this.labelControl1.TabIndex = 3;
-            this.labelControl1.Text = "Tổng cộng";
+            this.lbl_SumPrice.Location = new System.Drawing.Point(623, 609);
+            this.lbl_SumPrice.Name = "lbl_SumPrice";
+            this.lbl_SumPrice.Size = new System.Drawing.Size(81, 26);
+            this.lbl_SumPrice.StyleController = this.layoutControl;
+            this.lbl_SumPrice.TabIndex = 3;
+            this.lbl_SumPrice.Text = "Tổng cộng";
             // 
-            // lkuFood
+            // lku_Food
             // 
-            this.lkuFood.EditValue = "";
-            this.lkuFood.Location = new System.Drawing.Point(706, 75);
-            this.lkuFood.Name = "lkuFood";
-            this.lkuFood.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lku_Food.EditValue = "";
+            this.lku_Food.Location = new System.Drawing.Point(706, 75);
+            this.lku_Food.Name = "lku_Food";
+            this.lku_Food.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lkuFood.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            this.lku_Food.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "Danh sách tên món")});
-            this.lkuFood.Size = new System.Drawing.Size(244, 26);
-            this.lkuFood.StyleController = this.layoutControl;
-            this.lkuFood.TabIndex = 16;
-            this.lkuFood.EditValueChanged += new System.EventHandler(this.LkuFood_EditValueChanged);
+            this.lku_Food.Size = new System.Drawing.Size(244, 26);
+            this.lku_Food.StyleController = this.layoutControl;
+            this.lku_Food.TabIndex = 16;
+            this.lku_Food.EditValueChanged += new System.EventHandler(this.LkuFood_EditValueChanged);
             // 
-            // lkuCategory
+            // lku_Category
             // 
-            this.lkuCategory.EditValue = "";
-            this.lkuCategory.Location = new System.Drawing.Point(706, 45);
-            this.lkuCategory.Name = "lkuCategory";
-            this.lkuCategory.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lku_Category.EditValue = "";
+            this.lku_Category.Location = new System.Drawing.Point(706, 45);
+            this.lku_Category.Name = "lku_Category";
+            this.lku_Category.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lkuCategory.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            this.lku_Category.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "Danh mục món")});
-            this.lkuCategory.Properties.DropDownRows = 20;
-            this.lkuCategory.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
-            this.lkuCategory.Size = new System.Drawing.Size(412, 26);
-            this.lkuCategory.StyleController = this.layoutControl;
-            this.lkuCategory.TabIndex = 15;
-            this.lkuCategory.EditValueChanged += new System.EventHandler(this.LkuCategory_EditValueChanged);
+            this.lku_Category.Properties.DropDownRows = 20;
+            this.lku_Category.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
+            this.lku_Category.Size = new System.Drawing.Size(412, 26);
+            this.lku_Category.StyleController = this.layoutControl;
+            this.lku_Category.TabIndex = 15;
+            this.lku_Category.EditValueChanged += new System.EventHandler(this.LkuCategory_EditValueChanged);
             // 
-            // lblQuantity
+            // lbl_Quantity
             // 
-            this.lblQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblQuantity.Location = new System.Drawing.Point(954, 75);
-            this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(60, 26);
-            this.lblQuantity.StyleController = this.layoutControl;
-            this.lblQuantity.TabIndex = 14;
-            this.lblQuantity.Text = "Số lượng";
+            this.lbl_Quantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Quantity.Location = new System.Drawing.Point(954, 75);
+            this.lbl_Quantity.Name = "lbl_Quantity";
+            this.lbl_Quantity.Size = new System.Drawing.Size(60, 26);
+            this.lbl_Quantity.StyleController = this.layoutControl;
+            this.lbl_Quantity.TabIndex = 14;
+            this.lbl_Quantity.Text = "Số lượng";
             // 
-            // spinQuantity
+            // spin_Quantity
             // 
-            this.spinQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.spinQuantity.EditValue = new decimal(new int[] {
+            this.spin_Quantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.spin_Quantity.EditValue = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.spinQuantity.Location = new System.Drawing.Point(1018, 75);
-            this.spinQuantity.Name = "spinQuantity";
-            this.spinQuantity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.spin_Quantity.Location = new System.Drawing.Point(1018, 75);
+            this.spin_Quantity.Name = "spin_Quantity";
+            this.spin_Quantity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinQuantity.Properties.IsFloatValue = false;
-            this.spinQuantity.Properties.Mask.EditMask = "N00";
-            this.spinQuantity.Properties.MaxValue = new decimal(new int[] {
+            this.spin_Quantity.Properties.IsFloatValue = false;
+            this.spin_Quantity.Properties.Mask.EditMask = "N00";
+            this.spin_Quantity.Properties.MaxValue = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.spinQuantity.Properties.MinValue = new decimal(new int[] {
+            this.spin_Quantity.Properties.MinValue = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
-            this.spinQuantity.Size = new System.Drawing.Size(100, 26);
-            this.spinQuantity.StyleController = this.layoutControl;
-            this.spinQuantity.TabIndex = 12;
-            this.spinQuantity.EditValueChanged += new System.EventHandler(this.SpinQuantity_EditValueChanged);
+            this.spin_Quantity.Size = new System.Drawing.Size(100, 26);
+            this.spin_Quantity.StyleController = this.layoutControl;
+            this.spin_Quantity.TabIndex = 12;
+            this.spin_Quantity.EditValueChanged += new System.EventHandler(this.SpinQuantity_EditValueChanged);
             // 
-            // btnAddFood
+            // btn_EditBill
             // 
-            this.btnAddFood.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddFood.Enabled = false;
-            this.btnAddFood.Location = new System.Drawing.Point(1122, 45);
-            this.btnAddFood.Name = "btnAddFood";
-            this.btnAddFood.Size = new System.Drawing.Size(78, 56);
-            this.btnAddFood.StyleController = this.layoutControl;
-            this.btnAddFood.TabIndex = 13;
-            this.btnAddFood.Text = "Thêm món";
-            this.btnAddFood.Click += new System.EventHandler(this.BtnAddFood_Click);
+            this.btn_EditBill.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_EditBill.Enabled = false;
+            this.btn_EditBill.Location = new System.Drawing.Point(1122, 45);
+            this.btn_EditBill.Name = "btn_EditBill";
+            this.btn_EditBill.Size = new System.Drawing.Size(78, 56);
+            this.btn_EditBill.StyleController = this.layoutControl;
+            this.btn_EditBill.TabIndex = 13;
+            this.btn_EditBill.Text = "Thêm món";
+            this.btn_EditBill.Click += new System.EventHandler(this.Btn_EditBill_Click);
             // 
-            // lblFood
+            // lbl_Food
             // 
-            this.lblFood.Location = new System.Drawing.Point(625, 75);
-            this.lblFood.Name = "lblFood";
-            this.lblFood.Size = new System.Drawing.Size(77, 26);
-            this.lblFood.StyleController = this.layoutControl;
-            this.lblFood.TabIndex = 10;
-            this.lblFood.Text = "Tên món";
+            this.lbl_Food.Location = new System.Drawing.Point(625, 75);
+            this.lbl_Food.Name = "lbl_Food";
+            this.lbl_Food.Size = new System.Drawing.Size(77, 26);
+            this.lbl_Food.StyleController = this.layoutControl;
+            this.lbl_Food.TabIndex = 10;
+            this.lbl_Food.Text = "Tên món";
             // 
             // ctrlBillDetail
             // 
@@ -440,27 +442,17 @@ namespace Restaurant_Management.bul.usc
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem4,
-            this.gropAddFood,
-            this.groupBill});
+            this.gruop_AddFood,
+            this.group_Bill,
+            this.group_Table});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(1220, 713);
             this.Root.TextVisible = false;
             // 
-            // layoutControlItem4
+            // gruop_AddFood
             // 
-            this.layoutControlItem4.Control = this.layoutTable;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
-            this.layoutControlItem4.Size = new System.Drawing.Size(605, 693);
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextVisible = false;
-            // 
-            // gropAddFood
-            // 
-            this.gropAddFood.CustomizationFormText = "Thêm món";
-            this.gropAddFood.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.gruop_AddFood.CustomizationFormText = "Thêm món";
+            this.gruop_AddFood.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem10,
             this.layoutControlItem5,
             this.layoutControlItem9,
@@ -468,15 +460,15 @@ namespace Restaurant_Management.bul.usc
             this.layoutControlItem6,
             this.layoutControlItem7,
             this.layoutControlItem8});
-            this.gropAddFood.Location = new System.Drawing.Point(605, 0);
-            this.gropAddFood.Name = "gropAddFood";
-            this.gropAddFood.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.gropAddFood.Size = new System.Drawing.Size(595, 101);
-            this.gropAddFood.Text = "Thêm món";
+            this.gruop_AddFood.Location = new System.Drawing.Point(605, 0);
+            this.gruop_AddFood.Name = "gruop_AddFood";
+            this.gruop_AddFood.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
+            this.gruop_AddFood.Size = new System.Drawing.Size(595, 101);
+            this.gruop_AddFood.Text = "Thêm món";
             // 
             // layoutControlItem10
             // 
-            this.layoutControlItem10.Control = this.lblCategory;
+            this.layoutControlItem10.Control = this.lbl_Category;
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem10.MinSize = new System.Drawing.Size(71, 24);
             this.layoutControlItem10.Name = "layoutControlItem10";
@@ -487,7 +479,7 @@ namespace Restaurant_Management.bul.usc
             // 
             // layoutControlItem5
             // 
-            this.layoutControlItem5.Control = this.lkuCategory;
+            this.layoutControlItem5.Control = this.lku_Category;
             this.layoutControlItem5.Location = new System.Drawing.Point(81, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(416, 30);
@@ -496,7 +488,7 @@ namespace Restaurant_Management.bul.usc
             // 
             // layoutControlItem9
             // 
-            this.layoutControlItem9.Control = this.lblFood;
+            this.layoutControlItem9.Control = this.lbl_Food;
             this.layoutControlItem9.ControlAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 30);
             this.layoutControlItem9.MinSize = new System.Drawing.Size(62, 24);
@@ -508,7 +500,7 @@ namespace Restaurant_Management.bul.usc
             // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.lkuFood;
+            this.layoutControlItem1.Control = this.lku_Food;
             this.layoutControlItem1.Location = new System.Drawing.Point(81, 30);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(248, 30);
@@ -517,7 +509,7 @@ namespace Restaurant_Management.bul.usc
             // 
             // layoutControlItem6
             // 
-            this.layoutControlItem6.Control = this.lblQuantity;
+            this.layoutControlItem6.Control = this.lbl_Quantity;
             this.layoutControlItem6.Location = new System.Drawing.Point(329, 30);
             this.layoutControlItem6.MinSize = new System.Drawing.Size(64, 24);
             this.layoutControlItem6.Name = "layoutControlItem6";
@@ -528,7 +520,7 @@ namespace Restaurant_Management.bul.usc
             // 
             // layoutControlItem7
             // 
-            this.layoutControlItem7.Control = this.spinQuantity;
+            this.layoutControlItem7.Control = this.spin_Quantity;
             this.layoutControlItem7.Location = new System.Drawing.Point(393, 30);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(104, 30);
@@ -537,7 +529,7 @@ namespace Restaurant_Management.bul.usc
             // 
             // layoutControlItem8
             // 
-            this.layoutControlItem8.Control = this.btnAddFood;
+            this.layoutControlItem8.Control = this.btn_EditBill;
             this.layoutControlItem8.Location = new System.Drawing.Point(497, 0);
             this.layoutControlItem8.MinSize = new System.Drawing.Size(82, 29);
             this.layoutControlItem8.Name = "layoutControlItem8";
@@ -546,9 +538,9 @@ namespace Restaurant_Management.bul.usc
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
-            // groupBill
+            // group_Bill
             // 
-            this.groupBill.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.group_Bill.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem2,
             this.layoutControlItem11,
             this.layoutControlItem18,
@@ -560,11 +552,11 @@ namespace Restaurant_Management.bul.usc
             this.layoutControlItem19,
             this.layoutControlItem3,
             this.layoutControlItem20});
-            this.groupBill.Location = new System.Drawing.Point(605, 101);
-            this.groupBill.Name = "groupBill";
-            this.groupBill.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
-            this.groupBill.Size = new System.Drawing.Size(595, 592);
-            this.groupBill.Text = "Hoá đơn";
+            this.group_Bill.Location = new System.Drawing.Point(605, 101);
+            this.group_Bill.Name = "group_Bill";
+            this.group_Bill.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
+            this.group_Bill.Size = new System.Drawing.Size(595, 592);
+            this.group_Bill.Text = "Hoá đơn";
             // 
             // layoutControlItem2
             // 
@@ -577,7 +569,7 @@ namespace Restaurant_Management.bul.usc
             // 
             // layoutControlItem11
             // 
-            this.layoutControlItem11.Control = this.labelControl1;
+            this.layoutControlItem11.Control = this.lbl_SumPrice;
             this.layoutControlItem11.Location = new System.Drawing.Point(0, 465);
             this.layoutControlItem11.MinSize = new System.Drawing.Size(75, 24);
             this.layoutControlItem11.Name = "layoutControlItem11";
@@ -588,7 +580,7 @@ namespace Restaurant_Management.bul.usc
             // 
             // layoutControlItem18
             // 
-            this.layoutControlItem18.Control = this.labelControl2;
+            this.layoutControlItem18.Control = this.lbl_Discount;
             this.layoutControlItem18.Location = new System.Drawing.Point(0, 495);
             this.layoutControlItem18.MinSize = new System.Drawing.Size(64, 24);
             this.layoutControlItem18.Name = "layoutControlItem18";
@@ -599,7 +591,7 @@ namespace Restaurant_Management.bul.usc
             // 
             // layoutControlItem12
             // 
-            this.layoutControlItem12.Control = this.tbxSumPrice;
+            this.layoutControlItem12.Control = this.tbx_SumPrice;
             this.layoutControlItem12.Location = new System.Drawing.Point(85, 465);
             this.layoutControlItem12.Name = "layoutControlItem12";
             this.layoutControlItem12.Size = new System.Drawing.Size(381, 30);
@@ -608,7 +600,7 @@ namespace Restaurant_Management.bul.usc
             // 
             // layoutControlItem14
             // 
-            this.layoutControlItem14.Control = this.tbxSalePrice;
+            this.layoutControlItem14.Control = this.tbx_DiscountPrice;
             this.layoutControlItem14.Location = new System.Drawing.Point(139, 495);
             this.layoutControlItem14.Name = "layoutControlItem14";
             this.layoutControlItem14.Size = new System.Drawing.Size(327, 30);
@@ -617,7 +609,7 @@ namespace Restaurant_Management.bul.usc
             // 
             // layoutControlItem13
             // 
-            this.layoutControlItem13.Control = this.labelControl3;
+            this.layoutControlItem13.Control = this.lbl_TotalPrice;
             this.layoutControlItem13.Location = new System.Drawing.Point(0, 525);
             this.layoutControlItem13.MinSize = new System.Drawing.Size(77, 24);
             this.layoutControlItem13.Name = "layoutControlItem13";
@@ -628,7 +620,7 @@ namespace Restaurant_Management.bul.usc
             // 
             // layoutControlItem17
             // 
-            this.layoutControlItem17.Control = this.tbxTotalPrice;
+            this.layoutControlItem17.Control = this.tbx_TotalPrice;
             this.layoutControlItem17.Location = new System.Drawing.Point(85, 525);
             this.layoutControlItem17.Name = "layoutControlItem17";
             this.layoutControlItem17.Size = new System.Drawing.Size(381, 30);
@@ -637,7 +629,7 @@ namespace Restaurant_Management.bul.usc
             // 
             // layoutControlItem15
             // 
-            this.layoutControlItem15.Control = this.spinSale;
+            this.layoutControlItem15.Control = this.spin_Discount;
             this.layoutControlItem15.Location = new System.Drawing.Point(85, 495);
             this.layoutControlItem15.Name = "layoutControlItem15";
             this.layoutControlItem15.Size = new System.Drawing.Size(54, 30);
@@ -646,7 +638,7 @@ namespace Restaurant_Management.bul.usc
             // 
             // layoutControlItem19
             // 
-            this.layoutControlItem19.Control = this.btnPay;
+            this.layoutControlItem19.Control = this.btn_Pay;
             this.layoutControlItem19.Location = new System.Drawing.Point(466, 465);
             this.layoutControlItem19.MinSize = new System.Drawing.Size(85, 29);
             this.layoutControlItem19.Name = "layoutControlItem19";
@@ -657,7 +649,7 @@ namespace Restaurant_Management.bul.usc
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.lblCheckIn;
+            this.layoutControlItem3.Control = this.lbl_CheckIn;
             this.layoutControlItem3.Location = new System.Drawing.Point(305, 0);
             this.layoutControlItem3.MinSize = new System.Drawing.Size(94, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
@@ -668,7 +660,7 @@ namespace Restaurant_Management.bul.usc
             // 
             // layoutControlItem20
             // 
-            this.layoutControlItem20.Control = this.lblTableName;
+            this.layoutControlItem20.Control = this.lbl_TableName;
             this.layoutControlItem20.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem20.MinSize = new System.Drawing.Size(94, 24);
             this.layoutControlItem20.Name = "layoutControlItem20";
@@ -677,9 +669,29 @@ namespace Restaurant_Management.bul.usc
             this.layoutControlItem20.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem20.TextVisible = false;
             // 
+            // group_Table
+            // 
+            this.group_Table.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem4});
+            this.group_Table.Location = new System.Drawing.Point(0, 0);
+            this.group_Table.Name = "group_Table";
+            this.group_Table.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
+            this.group_Table.Size = new System.Drawing.Size(605, 693);
+            this.group_Table.Text = "Danh sách bàn";
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.layoutTable;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+            this.layoutControlItem4.Size = new System.Drawing.Size(593, 656);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
+            // 
             // layoutControlItem16
             // 
-            this.layoutControlItem16.Control = this.labelControl3;
+            this.layoutControlItem16.Control = this.lbl_TotalPrice;
             this.layoutControlItem16.Location = new System.Drawing.Point(0, 397);
             this.layoutControlItem16.Name = "layoutControlItem16";
             this.layoutControlItem16.Size = new System.Drawing.Size(92, 15);
@@ -730,18 +742,17 @@ namespace Restaurant_Management.bul.usc
             this.Size = new System.Drawing.Size(1230, 725);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
             this.layoutControl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.spinSale.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbxSalePrice.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbxSumPrice.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbxTotalPrice.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkuFood.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkuCategory.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinQuantity.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spin_Discount.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbx_DiscountPrice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbx_SumPrice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbx_TotalPrice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lku_Food.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lku_Category.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spin_Quantity.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlBillDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewBillDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gropAddFood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gruop_AddFood)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
@@ -749,7 +760,7 @@ namespace Restaurant_Management.bul.usc
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupBill)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.group_Bill)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
@@ -761,6 +772,8 @@ namespace Restaurant_Management.bul.usc
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.group_Table)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
             this.ResumeLayout(false);
 
@@ -768,27 +781,27 @@ namespace Restaurant_Management.bul.usc
 
         #endregion
         private FlowLayoutPanel layoutTable;
-        private DevExpress.XtraEditors.LabelControl lblCategory;
+        private DevExpress.XtraEditors.LabelControl lbl_Category;
         private DevExpress.XtraLayout.LayoutControl layoutControl;
-        private DevExpress.XtraEditors.LabelControl lblTableName;
-        private DevExpress.XtraEditors.LabelControl lblCheckIn;
-        private DevExpress.XtraEditors.SimpleButton btnPay;
-        private DevExpress.XtraEditors.SpinEdit spinSale;
-        private DevExpress.XtraEditors.TextEdit tbxSalePrice;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit tbxSumPrice;
-        private DevExpress.XtraEditors.TextEdit tbxTotalPrice;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.LookUpEdit lkuFood;
-        private DevExpress.XtraEditors.LookUpEdit lkuCategory;
-        private DevExpress.XtraEditors.LabelControl lblQuantity;
-        private DevExpress.XtraEditors.SpinEdit spinQuantity;
-        private DevExpress.XtraEditors.SimpleButton btnAddFood;
-        private DevExpress.XtraEditors.LabelControl lblFood;
+        private DevExpress.XtraEditors.LabelControl lbl_TableName;
+        private DevExpress.XtraEditors.LabelControl lbl_CheckIn;
+        private DevExpress.XtraEditors.SimpleButton btn_Pay;
+        private DevExpress.XtraEditors.SpinEdit spin_Discount;
+        private DevExpress.XtraEditors.TextEdit tbx_DiscountPrice;
+        private DevExpress.XtraEditors.LabelControl lbl_TotalPrice;
+        private DevExpress.XtraEditors.LabelControl lbl_Discount;
+        private DevExpress.XtraEditors.TextEdit tbx_SumPrice;
+        private DevExpress.XtraEditors.TextEdit tbx_TotalPrice;
+        private DevExpress.XtraEditors.LabelControl lbl_SumPrice;
+        private DevExpress.XtraEditors.LookUpEdit lku_Food;
+        private DevExpress.XtraEditors.LookUpEdit lku_Category;
+        private DevExpress.XtraEditors.LabelControl lbl_Quantity;
+        private DevExpress.XtraEditors.SpinEdit spin_Quantity;
+        private DevExpress.XtraEditors.SimpleButton btn_EditBill;
+        private DevExpress.XtraEditors.LabelControl lbl_Food;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraLayout.LayoutControlGroup gropAddFood;
+        private DevExpress.XtraLayout.LayoutControlGroup gruop_AddFood;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
@@ -796,7 +809,7 @@ namespace Restaurant_Management.bul.usc
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
-        private DevExpress.XtraLayout.LayoutControlGroup groupBill;
+        private DevExpress.XtraLayout.LayoutControlGroup group_Bill;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem18;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
@@ -815,5 +828,6 @@ namespace Restaurant_Management.bul.usc
         private DevExpress.XtraGrid.Columns.GridColumn Quantity;
         private DevExpress.XtraGrid.Columns.GridColumn Price;
         private DevExpress.XtraGrid.Columns.GridColumn Total;
+        private DevExpress.XtraLayout.LayoutControlGroup group_Table;
     }
 }
