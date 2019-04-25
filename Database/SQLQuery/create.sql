@@ -87,7 +87,7 @@ CREATE TABLE [Bill] (
     [CheckOut] DATETIME,                            -- Thời gian ra
     [TableID]  INT      NOT NULL,                   -- Mã bàn ăn
     [StatusID] INT      NOT NULL DEFAULT 0,         -- Trạng thái hoá đơn
-    [Discount]     INT      NOT NULL DEFAULT 0,         -- Giảm giá
+    [Discount] INT      NOT NULL DEFAULT 0,         -- Giảm giá
 
     CHECK ([CheckIn] <= [CheckOut]),
     CHECK (0 <= [Discount] AND [Discount] <= 100),
@@ -164,16 +164,6 @@ BEGIN
 END
 GO
 
--- update bill for pay
-CREATE PROC [proc_PayBill]
-    @billID INT, @discount INT
-AS
-BEGIN
-    UPDATE [Bill] SET [StatusID] = 1, [Discount] = @discount, [CheckOut] = GETDATE() WHERE [ID] = @billID
-    UPDATE [Table] SET [StatusID] = 0 WHERE [ID] = (SELECT [TableID] FROM [Bill] WHERE [ID] = @billID)
-END
-GO
-
 -- insert Food
 /*	
 	Nếu Table KHÔNG có Bill CHƯA thanh toán, tức có nghĩa là ko có bill đang hiện hành tại Table đó
@@ -203,8 +193,7 @@ BEGIN
             BEGIN
                 INSERT INTO [Bill] ([TableID]) VALUES (@tableID)
                 SET @billID = (SELECT @@IDENTITY)
-                INSERT INTO [BillDetail] ([BillID], [FoodID], [Quantity]) VALUES (@billID, @foodID, @quantity)
-                UPDATE [Table] SET [StatusID] = 1 WHERE [ID] = @tableID
+                INSERT INTO [BillDetail] ([BillID], [FoodID], [Quantity]) VALUES (@billID, @foodID, @quantity)               
             END
         END
         ELSE
@@ -218,20 +207,57 @@ BEGIN
             ELSE
             BEGIN
                 DECLARE @temp INT = (SELECT [Quantity] FROM [BillDetail] WHERE [ID] = @billDetailID) + @quantity
-                IF @temp <= 0
-                BEGIN
-                    DELETE [BillDetail] WHERE [ID] = @billDetailID
-                    IF NOT EXISTS (SELECT [ID] FROM [BillDetail] WHERE [BillID] = @billID)
-                    BEGIN
-                        DELETE [Bill] WHERE [ID] = @billID
-                        UPDATE [Table] SET [StatusID] = 0 WHERE [ID] = @tableID
-                    END
-                END
+                IF @temp <= 0                
+                    DELETE [BillDetail] WHERE [ID] = @billDetailID      
                 ELSE
                     UPDATE [BillDetail] SET [Quantity] = @temp WHERE [ID] = @billDetailID
             END
         END
     END
+END
+GO
+
+-- update bill for pay
+CREATE PROC [proc_PayBill]
+    @billID INT, @discount INT
+AS
+BEGIN
+    UPDATE [Bill] SET [StatusID] = 1, [Discount] = @discount, [CheckOut] = GETDATE() WHERE [ID] = @billID
+END
+GO
+
+-- create trigger
+
+CREATE TRIGGER [trig_UpdateBill]
+ON [Bill]
+FOR UPDATE
+AS
+BEGIN
+    DECLARE @tableID INT = (SELECT [TableID] FROM [Inserted])
+    IF ((SELECT COUNT([ID]) FROM [Bill] WHERE [StatusID] = 0 AND [TableID] = @tableID) = 1)
+        UPDATE [Table] SET [StatusID] = 1 WHERE [ID] = @tableID
+    ELSE
+        UPDATE [Table] SET [StatusID] = 0 WHERE [ID] = @tableID
+END
+GO
+
+CREATE TRIGGER [trig_InsertBill] ON [Bill] FOR INSERT
+AS BEGIN
+    UPDATE [Table] SET [StatusID] = 1 WHERE [ID] = (SELECT [TableID] FROM [Inserted])
+END
+GO
+
+CREATE TRIGGER [trig_DeleteBill] ON [Bill] FOR DELETE
+AS BEGIN
+    UPDATE [Table] SET [StatusID] = 0 WHERE [ID] = (SELECT [TableID] FROM [Deleted])
+END
+GO
+
+CREATE TRIGGER [trig_DeleteBillDetail] ON [BillDetail] FOR DELETE
+AS BEGIN
+	DECLARE @billID INT = (SELECT [BillID] FROM [Deleted])
+	IF (SELECT COUNT([ID]) FROM [BillDetail] WHERE [BillID] = @billID) = 0
+		DELETE [Bill] WHERE [ID] = @billID  
 END
 GO
 
